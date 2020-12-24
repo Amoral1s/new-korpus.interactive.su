@@ -1,0 +1,105 @@
+@font-face 
+	font-family: 'font'
+	src: url('fonts/Ubuntu-Regular.eot');
+	src: local('☺'), url('fonts/Ubuntu-Regular.woff') format('woff'), url('fonts/Ubuntu-Regular.ttf') format('truetype'), url('fonts/Ubuntu-Regular.svg') format('svg')
+	font-weight: 400
+	font-style: normal
+	font-display: swap
+@font-face 
+	font-family: 'font'
+	src: url('fonts/Ubuntu-Bold.eot')
+	src: local('☺'), url('fonts/Ubuntu-Bold.woff') format('woff'), url('fonts/Ubuntu-Bold.ttf') format('truetype'), url('fonts/Ubuntu-Bold.svg') format('svg')
+	font-weight: 700
+	font-style: normal
+	font-display: swap
+
+
+
+$font: "font", sans-serif
+$main: #4B49BF
+$light: #F3F3F3
+$accent: #FED450
+$dark: #111111
+
+*
+	box-sizing: border-box
+	margin: 0
+	padding: 0
+
+body, html
+	margin: 0
+	padding: 0
+	width: auto
+	color: #000000
+	font-family: $font
+	font-weight: 400
+	font-size: 16px
+	line-height: 1.2
+	overflow-x: hidden
+	-ms-overflow-style: scrollbar
+
+a, a:hover, a:active, a:link, a:focus
+	text-decoration: none
+	outline: none
+	color: #000000
+img
+	max-width: 100%
+
+ul 
+	list-style: none
+	font-size: 16px
+
+div, span, article, nav, section,main, header
+	padding: 0
+	margin: 0
+	
+input, button, select, textarea
+	border: 0
+	box-shadow: 0 0 10px rgba(0,0,0,0.2)
+	font-size: 18px
+	color: #000000
+input[type="text"],input[type="tel"], input[type="password"],input[type="email"]
+	border: 1px solid rgba(0, 0, 0, 0.1)
+	box-shadow: inset -1px 3px 7px rgba(0, 0, 0, 0.07)
+	appearance: none
+	-webkit-appearance: none
+	-moz-appearance: none
+
+input[type="text"],input[type="tel"],input[type="submit"],button
+	appearance: none
+	-webkit-appearance: none
+	-moz-appearance: none
+	padding: 10px 15px
+	
+	
+input:focus, textarea:focus, select:focus, button:focus, select:focus
+	outline: none
+h1, h2, h3, h4, h5
+	font-weight: 700
+
+.container 
+	width: 100%
+	padding-right: 15px
+	padding-left: 15px
+	margin-right: auto
+	margin-left: auto
+
+@media (min-width: 576px) 
+  .container 
+    max-width: 540px
+
+@media (min-width: 767px) 
+  .container 
+    max-width: 740px
+
+@media (min-width: 992px) 
+  .container 
+    max-width: 960px
+
+@media (min-width: 1200px) 
+  .container 
+    max-width: 1170px 
+section, footer
+	padding-top: 50px
+	padding-bottom: 50px
+
