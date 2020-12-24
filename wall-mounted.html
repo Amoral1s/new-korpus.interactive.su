@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" id="myViewport" content="width=device-width, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <title>New project</title>
+  <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+  <meta property="og:title" content="" />
+  <meta name="keywords" content=""/>
+  <!-- <link rel="stylesheet" href="css/libs.min.css"> -->
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body >
+  <header class="header">
+    <div class="container">
+      <div class="header__logo">
+        <a href="/"><img src="img/logo.svg" alt="interactive.su"></a>
+      </div>
+      <div class="header__menu">
+        <ul>
+          <li><a href="#top">Главная</a></li>
+          <li><a href="#features">Преимущества</a></li>
+          <li><a href="#constructor">Конструктор</a></li>
+        </ul>
+      </div>
+      <div class="header__call button">
+        <img src="img/icons/btn-call.svg" alt="callback">
+        Позвоните мне
+      </div>
+      <div class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+  
+  <section class="offer" id="top">
+    <div class="container">
+      <div class="offer-left">
+        <h1>
+          Изготовление уникальных алюминиевых корпусов для интерактивного оборудования
+        </h1>
+        <p>
+          Для рекламных коробов, терминалов и любого другого оборудования
+        </p>
+        <a href="#constructor" class="button">Онлайн конструктор</a>
+      </div>
+      <!-- /.offer-left -->
+      <div class="offer-right">
+        <img src="img/items/item-main.png" alt="corpus">
+      </div>
+      <!-- /.offer-right -->
+    </div>
+  </section>
+
+  <section class="calc container">
+    <div class="calc-section">
+      <h2 class="title">
+        1. Размер корпуса
+      </h2>
+      <p class="subtitle">
+        Укажите внешние габариты корпуса или выберите 
+        диагональ экрана, чтобы получить рекомендуемые габариты
+      </p>
+      <div class="calc-wrap">
+        <div class="calc-wrap-left">
+          <div class="calc-row">
+            <div class="calc-row-column">
+              <p>Диагональ экрана</p>
+              <select name="" id="all-height">
+                <option value=""><b>19"</b> 447х459мм</option>
+                <option value=""><b>21.5"</b> 445x625</option>
+                <option value=""><b>23.8"</b> 414x644</option>
+                <option value=""><b>27"</b> 368x630</option>
+                <option value=""><b>32"</b> 514x815</option>
+                <option value=""><b>43"</b> 665x1075</option>
+                <option value=""><b>50"</b> 750x1230</option>
+                <option value=""><b>55"</b> 820x1338</option>
+                <option value=""><b>65"</b> 940x1552</option>
+                <option value=""><b></b> Другая</option>
+              </select>
+            </div>
+          </div>
+          <div class="calc-row">
+            <div class="calc-row-column">
+              <p>Высота, мм</p>
+              <div class="calc-row-numbers__input">
+                <div class="minus"></div>
+                <input type="number" min="1" value="447">
+                <div class="plus"></div>
+              </div>
+            </div>
+            <div class="calc-row-column">
+              <p>Длина, мм</p>
+              <div class="calc-row-numbers__input">
+                <div class="minus"></div>
+                <input type="number" min="1" value="459">
+                <div class="plus"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.calc-wrap-left -->
+        <div class="calc-wrap-right">
+          <img src="img/calc/all-height.png" alt="Размер корпуса">
+          <div class="calc-wrap-right__height">
+            000
+          </div>
+          <div class="calc-wrap-right__width">
+            000
+          </div>
+        </div>
+        <!-- /.calc-wrap-right -->
+      </div>
+      <!-- /.calc-wrap -->
+    </div>
+    <!-- /.calc-section -->
+    <div class="calc-section">
+      <h2 class="title">
+        2. Глубина корпуса
+      </h2>
+      <p class="subtitle">
+        Выберите модификацию тыловой части корпуса под размещение электроники <br>
+        Каждый тип имеет фиксированное расположение комплектующих согласно блок схеме
+      </p>
+    </div>
+    <!-- /.calc-section -->
+    <div class="calc-section">
+      <h2 class="title">
+        3. Параметры активной области
+      </h2>
+      <p class="subtitle">
+        Рекомендуем указывать размер согласно размеру видимой или активной 
+        области LCD или сенсорного экрана, который планируется использовать
+      </p>
+    </div>
+    <!-- /.calc-section -->
+    <div class="calc-section">
+      <h2 class="title">
+        4. Порошковая покраска
+      </h2>
+      <p class="subtitle">
+        Выберите цвет покраски корпуса
+      </p>
+    </div>
+    <!-- /.calc-section -->
+    <div class="calc-section">
+      <h2 class="title">
+        5. Дополнительные опции
+      </h2>
+      <p class="subtitle">
+        Выберите дополнительные услуги
+      </p>
+    </div>
+    <!-- /.calc-section -->
+    <div class="calc-section">
+      <h2 class="title">
+        6. Контактная информация
+      </h2>
+      <p class="subtitle">
+        Расчет стоимости заказа автоматически будет отправлен на указанную почту
+      </p>
+    </div>
+    <!-- /.calc-section -->
+  </section>
+  <!-- /.calc container -->
+
+
+  <section class="call">
+    <div class="container">
+      <div class="call-left">
+        <img src="img/tel.jpg" alt="phone">
+      </div>
+      <div class="call-right">
+        <h2>Остались вопросы?</h2>
+        <p> Перезвоним в течении 15 минут</p>
+        <div class="form-wrap">
+          <div class="form-wrap-left">
+            <b>Ваш телефон</b>
+            <input type="tel" placeholder="+7 (___) ___-__-__">
+          </div>
+          <div class="form-wrap-right">
+            <input type="submit" value="Позвоните мне">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <a href="#header" class="logo"><img src="img/interactive.svg" alt="logo"></a>
+        <div class="adress">
+          <p><img src="img/icons/map.svg" alt="map">Москва, Егорьевский проезд 35с2</p>
+          <a href="mailto:info@interactive.ru"><img src="img/icons/email.svg" alt="map">info@interactive.ru</a>
+        </div>
+        <div class="phone">
+          <a href="tel:+74951365164">+7 495 136-51-64</a>
+          <p>интернет-магазин</p>
+        </div>
+        <div class="phone">
+          <a href="tel:+79623665164">+7 962 366-51-64</a>
+          <p>менеджер по продажам</p>
+        </div>
+        <div class="social">
+          <a href="" target="blank"><img src="img/icons/vk.svg" alt="vk"></a>
+          <a href="" target="blank"><img src="img/icons/y.svg" alt="youtube"></a>
+          <a href="" target="blank"><img src="img/icons/i.svg" alt="instagram"></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <div class="container">
+        <p>© interactive.su 2019-2020</p>
+        <a href="/privay-policy/">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="overlay"></div>
+  <div id="thx">
+    <div>
+      <h2>Спасибо!</h2>
+      <p>Ваша заявка принята!</p>
+    </div>
+  </div>
+
+  <div class="popup popup-call">
+    <div class="close">&times;</div>
+    <div class="popup-wrap">
+      <h2>
+        Закажите обратный звонок
+      </h2>
+      <p>Как к вам обращаться?</p>
+      <input type="text" placeholder="Имя">
+      <p>Телефон</p>
+      <input type="tel" placeholder="+7 (___) ___-__-__">
+      
+      <input type="submit" value="Перезвоните мне" class="button-alt">
+    </div>
+  </div>
+
+  <a href="#top" class="up"></a>
+  <!-- /.up -->
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <!-- <script src="js/libs.min.js"></script> -->
+  <script src="js/common.js"></script>
+</body>
+</html>

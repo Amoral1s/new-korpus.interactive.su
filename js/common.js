@@ -90,6 +90,16 @@ jQuery(document).ready(function ($) {
     $('.overlay').fadeOut(200);
     $('.popup').fadeOut(200);
   });
+  $('.wall-video').on('click', function() {
+    $('.popup-gif .content video').attr('src', $(this).attr('data-src'));
+    
+    $('.overlay').fadeIn(200);
+    $('.popup-gif').fadeIn(200);
+  });
+  $('.header__call').on('click', function() {
+    $('.overlay').fadeIn(200);
+    $('.popup-call').fadeIn(200);
+  });
   $('.overlay').on('click', function() {
     $('.overlay').fadeOut(200);
     $('.popup').fadeOut(200);
