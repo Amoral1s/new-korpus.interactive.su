@@ -190,6 +190,7 @@
 .constructor
 	padding-top: 0px
 	padding-bottom: 100px
+	
 	&-buttons
 		display: flex
 		justify-content: flex-end
@@ -294,6 +295,18 @@
 					img
 						position: static
 						transform: none
+	&-page
+		background-image: url(img/bg-header.jpg)
+		background-repeat: no-repeat
+		background-size: cover
+		background-position: center
+		padding-top: 180px
+		padding-bottom: 70px
+		.title, .subtitle
+			color: #ffffff
+		.constructor-wrap-item
+			background-color: #fff
+			
 .up
 	position: fixed
 	bottom: 20px
@@ -528,13 +541,224 @@
 
 
 .calc
+	&-popup
+		position: fixed
+		max-width: 1140px
+		width: 100%
+		padding: 40px
+		border-radius: 20px
+		background-color: #fff
+		z-index: 50
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		max-height: 90%
+		overflow-x: hidden
+		overflow-y: auto
+		display: none
+		h2
+			font-size: 30px
+			margin-bottom: 30px
+		&::-webkit-scrollbar
+			width: 10px 
+			height: 5px
+		&::-webkit-scrollbar-button
+			background: transparent
+		&::-webkit-scrollbar-track
+			background-color: $main
+		&::-webkit-scrollbar-track-piece
+			background-color: #ffffff
+		&::-webkit-scrollbar-thumb
+			height: 50px 
+			background-color: $main 
+		&::-webkit-scrollbar-corner
+			background-color: #999
+		&::-webkit-resizer
+			background-color: $main
+		&-wrap
+			display: flex
+			flex-wrap: wrap
+			justify-content: space-between
+			align-items: stretch
+			&-left
+				width: calc(48%)
+				display: flex
+				flex-direction: column
+				align-items: flex-start
+				.calc-popup-wrap-item:last-child
+					background-color: #fff
+					b
+						font-size: 22px
+					p
+						font-size: 20px
+			&-right
+				width: calc(48%)
+				display: flex
+				flex-direction: column
+				align-items: flex-start
+			&-item
+				width: 100%
+				background: #F5F5F5
+				border-radius: 30px
+				margin-bottom: 30px
+				padding: 30px 30px 20px 30px
+				.buttons
+					display: flex
+					justify-content: space-between
+					align-items: center
+					margin-top: 50px
+					.button
+						font-size: 16px
+						max-width: 48%
+					.calc-close
+						background-color: #ACACAC
+						color: #ffffff
+				h3
+					font-size: 22px
+					margin-bottom: 20px
+				.result
+					display: flex
+					justify-content: space-between
+					align-items: center	
+					padding-bottom: 7px
+					margin-bottom: 7px
+					border-bottom: 1px solid #E3E3E3
+					.calc-row
+						margin-bottom: 0
+					&:last-child
+						border-bottom: none
+					b
+						font-size: 18px
+						font-weight: 600
+					p
+						font-size: 16px
+					select
+						max-width: 200px!important
+						padding-top: 16px
+						padding-bottom: 16px
+					.select
+						&::after
+							height: 9px
+	&-overlay
+		position: fixed
+		display: none
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+		background-color: rgba(#000, .3)
+		width: 100%
+		height: 100%
+		z-index: 40
+	label
+		color: #141414
+	&-form
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		align-items: stretch
+		&-left
+			width: 40%
+			display: flex
+			flex-direction: column
+			align-items: flex-start
+			label
+				padding-left: 3px
+				font-weight: 400
+			input
+				width: 100%
+				appearance: none
+				-webkit-appearance: none
+				-moz-appearance: none
+				background: #FFFFFF
+				border: 1px solid #E3E3E3
+				border-radius: 7px
+				padding: 20px 30px
+				box-shadow: none
+			input
+				margin-bottom: 30px
+				margin-top: 5px
+		&-right
+			width: 55%
+			label
+				padding-left: 3px
+				font-weight: 400
+			textarea
+				margin-top: 5px
+				width: 100%
+				height: calc(100% - 52px)
+				appearance: none
+				-webkit-appearance: none
+				-moz-appearance: none
+				background: #FFFFFF
+				border: 1px solid #E3E3E3
+				border-radius: 7px
+				padding: 20px 30px
+				box-shadow: none
+				resize: none
+		&-submit
+			width: 100%
+			display: flex
+			justify-content: flex-start
+			align-items: center
+			margin-top: 20px
+			small
+				font-size: 14px
+				color: #ACACAC
+				max-width: 300px
+				margin-left: 40px
+				a
+					color: $main
+					font-size: 14px
 	&-row
 		display: flex
 		align-items: flex-start
 		justify-content: flex-start
 		margin-bottom: 30px
-		
-		input, select, textarea, button
+		position: relative
+		width: max-content
+		max-width: 100%
+		.toggle-q
+			position: absolute
+			top: -10px
+			right: -15px
+			color: $main
+			font-size: 20px
+			cursor: pointer
+		input[type="checkbox"]
+			height: 20px
+			width: 20px
+			margin-right: 20px
+			margin-bottom: 3px
+			box-shadow: none
+			cursor: pointer
+		.act-wrap
+			height: 300px
+		.act-obl
+			position: absolute
+			top: 35px
+			left: 40px
+			height: 220px
+			width: 320px
+			background: #E3E3E3
+			border: 1px solid #141414
+		label
+			cursor: pointer
+		input[type="radio"]
+			min-height: 30px
+			min-width: 30px
+			border-radius: 50%
+			box-shadow: none
+			margin-top: 10px
+			margin-right: 25px
+		b
+			font-size: 24px
+			font-weight: 600
+			margin-bottom: 3px
+			display: block
+		p
+			font-size: 16px
+		input[type="number"], select, textarea, button
 			background-color: #fff
 			box-shadow: none
 			border-radius: 7px
@@ -549,6 +773,25 @@
 				-webkit-appearance: none
 		input[type="number"]
 			border: none
+		.select
+			position: relative
+			&::after
+				position: absolute
+				pointer-events: none
+				right: 20px
+				top: 50%
+				transform: translateY(-50%)
+				content: ''
+				height: 8px
+				width: 18px
+				background-repeat: no-repeat
+				background-size: contain
+				background-position: center
+				background-image: url(img/icons/down.svg)
+		select
+			padding: 20px 30px
+			width: 380px
+		
 		&-numbers__input
 			display: flex
 			justify-content: center
@@ -557,7 +800,7 @@
 			border-radius: 7px
 			border: 1px solid #E3E3E3
 			.minus, .plus
-				background-color: $main
+				background-color: #ffffff
 				width: 30px
 				height: 52px
 				position: relative
@@ -568,13 +811,19 @@
 					top: 50%
 					left: 50%
 					transform: translate(-50%, -50%)
-					height: 15px
-					width: 15px
-					background-color: #000
+					height: 16px
+					width: 16px
+					background-repeat: no-repeat
+					background-attachment: cover
+					background-position: center
 			.minus
 				border-radius: 7px 0 0 7px
+				&::after
+					background-image: url(img/icons/calc-minus.svg)
 			.plus
 				border-radius: 0 7px 7px 0
+				&::after
+					background-image: url(img/icons/plus.svg)
 			input
 				height: 52px
 				font-size: 18px
@@ -595,6 +844,8 @@
 		padding: 60px
 		border-radius: 30px
 		margin-top: 50px
+		&:last-child
+			margin-bottom: 50px
 		.title
 			font-size: 32px
 			line-height: 1
@@ -607,6 +858,10 @@
 		display: flex
 		justify-content: space-between
 		align-items: stretch
+		p
+			margin-bottom: 2px
+			font-size: 16px
+			padding-left: 3px
 		&-left
 			width: calc(100% - 450px)
 		&-right
@@ -615,6 +870,24 @@
 			display: flex
 			justify-content: center
 			align-items: center
+			position: relative
+			&__height
+				position: absolute
+				top: 57px
+				left: 5px
+				transform: rotate(-90deg)
+				font-size: 18px
+				background-color: #E3E3E3
+				padding: 2px 5px
+				border-radius: 5px
+			&__width
+				position: absolute
+				bottom: 8px
+				right: 108px
+				font-size: 18px
+				background-color: #E3E3E3
+				padding: 2px 5px
+				border-radius: 5px
 			img
 				object-fit: contain
 

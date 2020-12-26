@@ -38,25 +38,49 @@
     </div>
   </header>
   
-  <section class="offer" id="top">
+  <section class="constructor constructor-page" id="top">
     <div class="container">
-      <div class="offer-left">
-        <h1>
-          Изготовление уникальных алюминиевых корпусов для интерактивного оборудования
-        </h1>
-        <p>
-          Для рекламных коробов, терминалов и любого другого оборудования
-        </p>
-        <a href="#constructor" class="button">Онлайн конструктор</a>
+      <h2 class="title">
+        Тип устройства
+      </h2>
+      <p class="subtitle">
+        Выберите тип корпуса
+      </p>
+      <div class="constructor-wrap">
+        <a href="/wall-mounted" class="constructor-wrap-item constructor-wrap-item-active" data-src="/wall-mounted">
+          <img src="img/assets/1.png" alt="Настенный">
+          <h3>Настенный</h3>
+          <div class="assets">
+            <div class="assets-d">
+              3D
+            </div>
+            <div class="assets-d wall-video" data-src="http://korpus.interactive.su/wp-content/themes/calc/img/1.mp4">
+              <img src="img/icons/play-blue.svg" alt="play">
+            </div>
+          </div>
+        </a>
+        <!-- /.constructor-wrap-item -->
+        <a href="/touch-screen" class="constructor-wrap-item" data-src="/touch-screen">
+          <img src="img/assets/2.png" alt="Сенсорный стол">
+          <h3>Сенсорный стол</h3>
+        </a>
+        <!-- /.constructor-wrap-item -->
+        <a href="/floor-mounted" class="constructor-wrap-item" data-src="/floor-mounted">
+          <img src="img/assets/3.png" alt="Напольный">
+          <h3>Напольный</h3>
+        </a>
+        <!-- /.constructor-wrap-item -->
+        <a href="/individual" class="constructor-wrap-item" data-src="/individual ">
+          <img src="img/assets/4.svg" alt="Индивидуальный">
+          <h3>Индивидуальный</h3>
+        </a>
+        <!-- /.constructor-wrap-item -->
+       
       </div>
-      <!-- /.offer-left -->
-      <div class="offer-right">
-        <img src="img/items/item-main.png" alt="corpus">
-      </div>
-      <!-- /.offer-right -->
     </div>
+    
   </section>
-
+  <form action="">
   <section class="calc container">
     <div class="calc-section">
       <h2 class="title">
@@ -71,18 +95,20 @@
           <div class="calc-row">
             <div class="calc-row-column">
               <p>Диагональ экрана</p>
-              <select name="" id="all-height">
-                <option value=""><b>19"</b> 447х459мм</option>
-                <option value=""><b>21.5"</b> 445x625</option>
-                <option value=""><b>23.8"</b> 414x644</option>
-                <option value=""><b>27"</b> 368x630</option>
-                <option value=""><b>32"</b> 514x815</option>
-                <option value=""><b>43"</b> 665x1075</option>
-                <option value=""><b>50"</b> 750x1230</option>
-                <option value=""><b>55"</b> 820x1338</option>
-                <option value=""><b>65"</b> 940x1552</option>
-                <option value=""><b></b> Другая</option>
-              </select>
+              <div for="all-height" class="select">
+                <select name="" id="all-height">
+                  <option value=""><b>19"</b> 447х459мм</option>
+                  <option value=""><b>21.5"</b> 445x625</option>
+                  <option value=""><b>23.8"</b> 414x644</option>
+                  <option value=""><b>27"</b> 368x630</option>
+                  <option value=""><b>32"</b> 514x815</option>
+                  <option value=""><b>43"</b> 665x1075</option>
+                  <option value=""><b>50"</b> 750x1230</option>
+                  <option value=""><b>55"</b> 820x1338</option>
+                  <option value=""><b>65"</b> 940x1552</option>
+                  <option value=""><b></b> Другая</option>
+                </select>
+              </div>
             </div>
           </div>
           <div class="calc-row">
@@ -95,7 +121,7 @@
               </div>
             </div>
             <div class="calc-row-column">
-              <p>Длина, мм</p>
+              <p>Ширина, мм</p>
               <div class="calc-row-numbers__input">
                 <div class="minus"></div>
                 <input type="number" min="1" value="459">
@@ -127,6 +153,50 @@
         Выберите модификацию тыловой части корпуса под размещение электроники <br>
         Каждый тип имеет фиксированное расположение комплектующих согласно блок схеме
       </p>
+      <div class="calc-wrap">
+        <div class="calc-wrap-left">
+          <div class="calc-row">
+            <input name="type" id="type-one" type="radio" >
+            <label for="type-one">
+              <b>70мм</b>
+              <p>
+                Прямая тыловая часть с внутренним отсеком для 
+                HDMI/VGA инвертора. Чаще всего используется как монитор
+              </p>
+            </label>
+          </div>
+          <!-- /.calc-row -->
+          <div class="calc-row">
+            <input name="type"  id="type-two" type="radio">
+            <label for="type-two">
+              <b>125мм</b>
+              <p>
+                Узкий отсек блока электроники с дверцей Используется под форм фактор Thin-ITX
+              </p>
+            </label>
+          </div>
+          <!-- /.calc-row -->
+          <div class="calc-row">
+            <input name="type"  id="type-three" type="radio">
+            <label for="type-three">
+              <b>177мм</b>
+              <p>
+                Широкий отсек блока электроники с дверцей
+                Используется под форм фактор ATX
+              </p>
+            </label>
+          </div>
+          <!-- /.calc-row -->
+        </div>
+        <!-- /.calc-wrap-left --> 
+        <div class="calc-wrap-right">
+          <div class="calc-row">
+            <img src="img/calc/deep.png" alt="Глубина корпуса">
+          </div>
+        </div>
+        <!-- /.calc-wrap-right -->
+      </div>
+      <!-- /.calc-wrap -->
     </div>
     <!-- /.calc-section -->
     <div class="calc-section">
@@ -137,6 +207,56 @@
         Рекомендуем указывать размер согласно размеру видимой или активной 
         области LCD или сенсорного экрана, который планируется использовать
       </p>
+      <div class="calc-wrap">
+        <div class="calc-wrap-left">
+          <div class="calc-row">
+            <div class="calc-row-column">
+              <p>Высота, мм</p>
+              <div class="calc-row-numbers__input">
+                <div class="minus"></div>
+                <input type="number" min="1" value="447">
+                <div class="plus"></div>
+              </div>
+            </div>
+            <div class="calc-row-column">
+              <p>Ширина, мм</p>
+              <div class="calc-row-numbers__input">
+                <div class="minus"></div>
+                <input type="number" min="1" value="459">
+                <div class="plus"></div>
+              </div>
+            </div>
+          </div>
+          <!-- /.calc-row -->
+          <div class="calc-row">
+            <div class="calc-row-column">
+              <p>Отступ слева</p>
+              <div class="calc-row-numbers__input">
+                <div class="minus"></div>
+                <input type="number" min="1" value="447">
+                <div class="plus"></div>
+              </div>
+            </div>
+            <div class="calc-row-column">
+              <p>Отступ справа</p>
+              <div class="calc-row-numbers__input">
+                <div class="minus"></div>
+                <input type="number" min="1" value="459">
+                <div class="plus"></div>
+              </div>
+            </div>
+          </div>
+          <!-- /.calc-row -->
+        </div>
+        <!-- /.calc-wrap-lect -->
+        <div class="calc-wrap-right">
+          <div class="calc-row act-wrap">
+            <img src="img/calc/act.png" alt="Актвная область корпуса">
+            <div class="act-obl"></div>
+          </div>
+        </div>
+        <!-- /.calc-wrapright -->
+      </div>
     </div>
     <!-- /.calc-section -->
     <div class="calc-section">
@@ -146,6 +266,40 @@
       <p class="subtitle">
         Выберите цвет покраски корпуса
       </p>
+      <div class="calc-wrap">
+        <div class="calc-wrap-left">
+          <p>Рама и лицевая часть</p>
+          <div class="calc-row">
+            <div class="ral ral-top select">
+              <select name="" id="">
+                <option value="">RAL 0000</option>
+              </select>
+            </div>
+          </div>
+          <!-- /.calc-row -->
+          <p>Тыловая часть</p>
+
+          <div class="calc-row">
+            <div class="ral ral-bot select">
+              <select name="" id="">
+                <option value="">RAL 0000</option>
+              </select>
+            </div>
+          </div>
+          <!-- /.calc-row -->
+          <div class="calc-row">
+            <input id="ral" type="checkbox">
+            <label for="ral">Покрасная не требуется</label>
+          </div>
+          <!-- /.calc-row -->
+        </div>
+        <!-- /.calc-wrap-left -->
+        <div class="calc-wrap-right">
+          <img src="img/calc/ral.png" alt="RAL">
+        </div>
+        <!-- /.calc-wrap-right -->
+      </div>
+      <!-- /.calc-wrap -->
     </div>
     <!-- /.calc-section -->
     <div class="calc-section">
@@ -155,6 +309,41 @@
       <p class="subtitle">
         Выберите дополнительные услуги
       </p>
+      <div class="calc-wrap">
+        <div class="calc-row">
+          <div class="calc-row-column">
+            <p>Тип крепления</p>
+            <div for="all-height" class="select">
+              <select name="" id="all-height">
+                <option value="">Крепление не требуется</option>
+                <option value="">Напольное крепление</option>
+                <option value="">Настенное крепление</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- /.calc-row -->
+      <div class="calc-row">
+        <input id="diod" type="checkbox">
+        <label for="diod">Светодиодная подсветка по периметру</label>
+        <div class="toggle-q">?</div>
+
+      </div>
+      <!-- /.calc-row -->
+      <div class="calc-row">
+        <input id="secur"  type="checkbox">
+        <label for="secur">Защита заказа</label>
+        <div class="toggle-q">?</div>
+      </div>
+      <!-- /.calc-row -->
+      <div class="calc-row">
+        <input id="compl"  type="checkbox">
+        <label for="compl">Нужна помощь в подборе комплектующих</label>
+        <div class="toggle-q">?</div>
+
+      </div>
+      <!-- /.calc-row -->
     </div>
     <!-- /.calc-section -->
     <div class="calc-section">
@@ -164,11 +353,232 @@
       <p class="subtitle">
         Расчет стоимости заказа автоматически будет отправлен на указанную почту
       </p>
+      <div class="calc-form">
+        <div class="calc-form-left">
+          <label for="">Название организации</label>
+          <input type="text" placeholder="ООО Огранизация">
+          
+          <label for="">Контактное лицо</label>
+          <input type="text" placeholder="Ваше имя">
+
+          <label for="">Телефон</label>
+          <input type="tel" placeholder="+7 (___) ___-__-__">
+
+          <label for="">Электронная почта</label>
+          <input type="email" placeholder="example@mail.ru">
+
+        </div>
+        <!-- /.calc-form-left -->
+        <div class="calc-form-right">
+          <label for="">Дополнительная информация</label>
+          <textarea name="" placeholder="Ваши пожелания и любые другие комментарии" id="" cols="30" rows="10"></textarea>
+        </div>
+        <!-- /.calc-form-right -->
+        <div class="calc-form-submit">
+          <button class="button alt calculated" type="button">Получить расчет</button>
+          <small>
+            Нажимая кнопку, я соглашаюсь с условиями сайта и <a href="/privacy-policy">Политикой конфиденциальности</a>
+          </small>
+        </div>
+        <!-- /.calc-form-submit -->
+      </div>
     </div>
     <!-- /.calc-section -->
+    
   </section>
   <!-- /.calc container -->
-
+  <div class="calc-popup">
+    <h2>Проверьте ваш заказ</h2>
+    <div class="calc-popup-wrap">
+      
+      <div class="calc-popup-wrap-left">
+        <div class="calc-popup-wrap-item">
+          <h3>Корпус</h3>
+          <div class="result">
+            <p>Длина</p>
+            <b>000</b>
+          </div>
+          <!-- /.result -->
+          <div class="result">
+            <p>Ширина</p>
+            <b>000</b>
+          </div>
+          <!-- /.result -->
+          <div class="result">
+            <p>Глубина</p>
+            <b>000</b>
+          </div>
+          <!-- /.result -->
+        </div>
+        <!-- /.calc-popup-wrap-item -->
+        
+        <div class="calc-popup-wrap-item">
+          <h3>Основание</h3>
+          <div class="result">
+            <p>Длина</p>
+            <b>000</b>
+          </div>
+          <!-- /.result -->
+          <div class="result">
+            <p>Ширина</p>
+            <b>000</b>
+          </div>
+          <!-- /.result -->
+        </div>
+        <!-- /.calc-popup-wrap-item -->
+        
+        <div class="calc-popup-wrap-item">
+          <h3>Цвет RAL</h3>
+          <div class="result">
+            <p>Рама и лицевая часть</p>
+            <b>000</b>
+          </div>
+          <!-- /.result -->
+          <div class="result">
+            <p>Тыловая часть</p>
+            <b>000</b>
+          </div>
+          <!-- /.result -->
+        </div>
+        <!-- /.calc-popup-wrap-item -->
+        
+        <div class="calc-popup-wrap-item">
+          <h3>Количество и срок поставки</h3>
+          <div class="result">
+            <div class="calc-row">
+              <div class="calc-row-column">
+                <p>Количество</p>
+                <div class="calc-row-numbers__input">
+                  <div class="minus"></div>
+                  <input type="number" min="1" value="447">
+                  <div class="plus"></div>
+                </div>
+              </div>
+              <div class="calc-row-column">
+                <p>Сроки поставки</p>
+                <div for="all-height" class="select">
+                  <select name="" id="all-height">
+                    <option value="">20-30 дней</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <!-- /.calc-row -->
+          </div>
+          <!-- /.result -->
+          
+        </div>
+        <!-- /.calc-popup-wrap-item -->
+        
+        <div class="calc-popup-wrap-item calc-submit">
+          <div class="result">
+            <p>Цена за еденицу</p>
+            <b>000</b>
+          </div>
+          <!-- /.result -->
+          <div class="result">
+            <p>Стоимость партии</p>
+            <b>000</b>
+          </div>
+          <!-- /.result -->
+         <div class="calc-row buttons">
+           <input type="submit" value="Подтвердить заказ" class="button alt">
+           <div class="button alt calc-close">Изменить параметры</div>
+         </div>
+        </div>
+        <!-- /.calc-popup-wrap-item -->
+      </div>
+      <!-- /.calc-popup-wrap-left -->
+      <div class="calc-popup-wrap-right">
+        <div class="calc-popup-wrap-item">
+          <h3>Активная область экрана</h3>
+          <div class="result">
+            <p>Длина</p>
+            <b>000</b>
+          </div>
+          <!-- /.result -->
+          <div class="result">
+            <p>Ширина</p>
+            <b>000</b>
+          </div>
+          <!-- /.result -->
+        </div>
+        <!-- /.calc-popup-wrap-item -->
+        <div class="calc-popup-wrap-item">
+          <h3>Смещение активной области</h3>
+          <div class="result">
+            <p>Слева</p>
+            <b>000</b>
+          </div>
+          <!-- /.result -->
+          <div class="result">
+            <p>Справа</p>
+            <b>000</b>
+          </div>
+          <!-- /.result -->
+          <div class="result">
+            <p>Сверху</p>
+            <b>000</b>
+          </div>
+          <!-- /.result -->
+          <div class="result">
+            <p>Снизу</p>
+            <b>000</b>
+          </div>
+          <!-- /.result -->
+        </div>
+        <!-- /.calc-popup-wrap-item -->
+        <div class="calc-popup-wrap-item">
+          <h3>Дополнительные опции</h3>
+          <div class="result">
+            <p>Защита заказа</p>
+            <b>000</b>
+          </div>
+          <!-- /.result -->
+          <div class="result">
+            <p>Светодиодная подсветка</p>
+            <b>000</b>
+          </div>
+          <!-- /.result -->
+          <div class="result">
+            <p>Подбор комплектующих</p>
+            <b>000</b>
+          </div>
+          <!-- /.result -->
+        </div>
+        <!-- /.calc-popup-wrap-item -->
+        <div class="calc-popup-wrap-item">
+          <h3 class="gift">Получите скидку
+            при заказе партии</h3>
+          <div class="result">
+            <p>5 - 10 шт</p>
+            <b>000</b>
+          </div>
+          <!-- /.result -->
+          <div class="result">
+            <p>11 - 15 шт</p>
+            <b>000</b>
+          </div>
+          <!-- /.result -->
+          <div class="result">
+            <p>16 - 30 шт</p>
+            <b>000</b>
+          </div>
+          <!-- /.result -->
+          <div class="result">
+            <p>30 шт и более</p>
+            <b>000</b>
+          </div>
+          <!-- /.result -->
+        </div>
+        <!-- /.calc-popup-wrap-item -->
+      </div>
+      <!-- /.calc-popup-wrap-right -->
+      
+    </div>
+  </div>
+  <div class="calc-overlay"></div>
+  </form>
 
   <section class="call">
     <div class="container">

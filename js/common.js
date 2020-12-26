@@ -1,5 +1,14 @@
 jQuery(document).ready(function ($) {
 
+  $('.calculated').on('click', function () { 
+    $('.calc-overlay').fadeIn(200);
+    $('.calc-popup').fadeIn(200);
+   });
+  $('.calc-close').on('click', function () { 
+    $('.calc-overlay').fadeOut(200);
+    $('.calc-popup').fadeOut(200);
+   });
+
   $(".up").click(function () {
     var elementClick = $(this).attr("href");
     var destination = $(elementClick).offset().top - 110;
