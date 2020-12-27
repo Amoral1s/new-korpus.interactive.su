@@ -555,7 +555,7 @@
 		max-height: 90%
 		overflow-x: hidden
 		overflow-y: auto
-		display: block
+		display: none
 		h2
 			font-size: 30px
 			margin-bottom: 30px
@@ -879,9 +879,11 @@
 				font-size: 18px
 				background-color: #E3E3E3
 				padding: 2px 5px
+				min-width: 40px
 				border-radius: 5px
 			&__width
 				position: absolute
+				min-width: 40px
 				bottom: 8px
 				right: 108px
 				font-size: 18px
@@ -896,8 +898,21 @@
 	opacity: 0.3
 	pointer-events: none
 
-
-
+.calc-row b.q-text
+	position: absolute
+	padding: 20px
+	background-color: #fff
+	font-weight: 400
+	font-size: 14px
+	right: -30px
+	color: #000000
+	bottom: 10px;
+	left: 10px
+	width: 300px
+	display: none
+.toggle-q:hover
+	b.q-text
+		display: block
 
 
 

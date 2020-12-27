@@ -146,20 +146,18 @@ jQuery(document).ready(function ($) {
 
   //2 экран
   const type = document.querySelectorAll('input[name="type"]');
-
+  let deep = 70;
   type.forEach((elem) => {
     elem.addEventListener('click', () => {
-
-      console.log(elem.value);
-
+      deep = elem.value;
       calcSections[2].classList.remove('disabled');
       calcSections[3].classList.remove('disabled');
     });
   });
 
   //3 экран
-  let actTopActual;
-  let actLeftActual;
+  let actTopActual = 35;
+  let actLeftActual = 35;
   actWidth.addEventListener('change', () => {
     if (actWidth.value > inputWidth.value - 70) {
       alert('Значение активной ширины экрана не может быть больше ширины корпуса (Ширина корпуса - 35мм)');
@@ -182,12 +180,13 @@ jQuery(document).ready(function ($) {
     actTopActual = actTop.value;
 
     calcSections[3].classList.remove('disabled');
-
+    console.log(actTopActual)
   });
 
   actTop.addEventListener('change', () => {
-    if (actTop.value < 35) {
+    if (actTopActual == 35 || actTop.value == 34) {
       alert('Значение не может быть меньше 35мм!');
+      actTop.value = 35;
     } else {
       if (actTopActual > actTop.value) {
         if (actTopActual == actTop.value) {
@@ -208,8 +207,9 @@ jQuery(document).ready(function ($) {
 
   });
   actLeft.addEventListener('change', () => {
-    if (actLeft.value < 35) {
+    if (actLeftActual == 35 || actLeft.value == 34) {
       alert('Значение не может быть меньше 35мм!');
+      actLeft.value = 35;
     } else {
       if (actLeftActual > actLeft.value) {
         if (actLeftActual == actLeft.value) {
@@ -236,6 +236,13 @@ jQuery(document).ready(function ($) {
 
   //4 экран
   ralNone.addEventListener('change', () => {
+    if (ralNone.checked) {
+      ralBot.classList.add('disabled');
+      ralTop.classList.add('disabled');
+    } else {
+      ralBot.classList.remove('disabled');
+      ralTop.classList.remove('disabled');
+    }
     calcSections[4].classList.remove('disabled');
     calcSections[5].classList.remove('disabled');
 
@@ -243,7 +250,10 @@ jQuery(document).ready(function ($) {
 
 
   //5 экран
-
+  const dopStand = document.querySelector('#dop-stand'),
+        dopDiod = document.querySelector('#diod'),
+        dopSecur = document.querySelector('#secur'),
+        dopCompl = document.querySelector('#compl');
 
   //6 экран
   let validation = 4;
@@ -286,17 +296,171 @@ jQuery(document).ready(function ($) {
 
 
 
+  //Поля подсчета в попап
+  const resWidth = document.querySelector('.res-width'),
+        resHeight = document.querySelector('.res-height'),
+        resDeep = document.querySelector('.res-deep'),
+        resActWidth = document.querySelector('.res-act-width'),
+        resActHeight = document.querySelector('.res-act-height'),
+        resActLeft = document.querySelector('.res-act-left'),
+        resActRight = document.querySelector('.res-act-right'),
+        resActTop = document.querySelector('.res-act-top'),
+        resActBot = document.querySelector('.res-act-bot'),
+        resRalTop = document.querySelector('.res-ral-top'),
+        resRalBot = document.querySelector('.res-ral-bot'),
+        resSecur = document.querySelector('.res-sec'),
+        resStand = document.querySelector('.res-krepl'),
+        resDiod = document.querySelector('.res-diod'),
+        resCompl = document.querySelector('.res-compl'),
+        resCountInput = document.querySelector('.res-count'),
+        resTime = document.querySelector('#res-time'),
+        resPriceOnce = document.querySelector('.res-price-once'),
+        resPriceAll = document.querySelector('.res-price-all');
 
 
   //Подсчет
   calculadetBtn.addEventListener('click', () => {
     $('.calc-overlay').fadeIn(200);
     $('.calc-popup').fadeIn(200);
+    resWidth.textContent = inputWidth.value;
+    resHeight.textContent = inputHeight.value;
+    resDeep.textContent = deep;
+    resActWidth.textContent = actWidth.value;
+    resActHeight.textContent = actHeight.value;
+    resActLeft.textContent = actLeft.value;
+    resActRight.textContent = Math.round(inputWidth.value - actWidth.value - actLeft.value);
+    resActTop.textContent = actTop.value;
+    resActBot.textContent = Math.round(inputHeight.value - actHeight.value - actTop.value);
+    
 
+    if (ralNone.checked) {
+      resRalTop.textContent = 'Нет';
+    resRalBot.textContent = 'Нет';
+    } else {
+      resRalTop.textContent = ralTop.value;
+      resRalBot.textContent = ralBot.value;
+    }
 
+    if (dopStand.value == 0) {
+      resStand.textContent = 'Нет';
+    } else if (dopStand.value == 1) {
+      resStand.textContent = 'Напольное';
+    } else if (dopStand.value == 2) {
+      resStand.textContent = 'Настенное';
+    }
+
+    if (dopSecur.checked) {
+      resSecur.textContent = 'Да';
+    } else {
+      resSecur.textContent = 'Нет';
+    }
+
+    if (dopDiod.checked) {
+      resDiod.textContent = 'Да';
+    } else {
+      resDiod.textContent = 'Нет';
+    }
+
+    if (dopCompl.checked) {
+      resCompl.textContent = 'Да';
+    } else {
+      resCompl.textContent = 'Нет';
+    }
+
+    calcStart();
   });
+  let result;
 
-  const resultWidth = document.querySelectorAll
+  const calcStart = () => {
+    //Вневшние габариты (расчет профиля)
+    const gabarity = Math.round((+inputWidth.value * 2 + +inputHeight.value * 2) / 1000 * 300 /*11 300 берется из погонного метра*/);
 
+    const fix = 800 + 1200; //11 Уголок *4 + Резка
 
+    const rezOuter = Math.round(
+      +inputWidth.value * +inputHeight.value / 10000 * 10 /*11 10 - резка лицевая */
+    );
+
+    const rezInner = Math.round(
+      +inputWidth.value * +inputHeight.value / 10000 * 15 /*11 10 - резка внутренняя */
+    );
+
+    const kron = Math.round(
+     (+inputHeight.value * 0.3) * 2
+    );
+
+    const E = Math.round(
+     4 * 15 //Цена кронштейна
+    );
+    
+    let typePlate;
+
+    if (deep == 70) {
+      typePlate = 300;
+    } else if (deep == 125) {
+      typePlate = 800;
+    } else if (deep == 177) {
+      typePlate = 1000;
+    }
+
+    let pokraska;
+
+    if (ralNone.checked) {
+      pokraska = 0;
+    } else {
+      pokraska = Math.round(inputWidth.value * inputHeight.value / 10000 * 35);/*Значение цены покраски*/
+    }
+    result = Math.round(
+      +gabarity + +fix + +rezOuter + +rezInner + +kron + +E + +typePlate + +pokraska
+    );
+
+    if (dopStand.value == 1) {
+      result = +result + 4500;
+    } else if (dopStand.value == 2) {
+      result = +result + 1500;
+    }
+
+    if (dopDiod.checked) {
+      result = +result + 1200;
+    }
+
+    if (dopSecur.checked) {
+      result = +result + 1000;
+    }
+    
+    resPriceOnce.textContent = +result + ' руб.';
+    resPriceAll.textContent = +result * +resCountInput.value + ' руб.';
+    console.log(typePlate)
+  };
+  resCountInput.addEventListener('change', () => {
+    if (resCountInput.value <= 4) {
+      resPriceAll.textContent = +result * +resCountInput.value + ' руб.';
+    } else if (resCountInput.value >= 5 && resCountInput.value <= 10) {
+      resPriceAll.textContent = Math.round((+result * +resCountInput.value) / 100 * 97) + ' руб.';
+    } else if (resCountInput.value >= 11 && resCountInput.value <= 15) {
+      resPriceAll.textContent = Math.round((+result * +resCountInput.value) / 100 * 95) + ' руб.';
+    } else if (resCountInput.value >= 16 && resCountInput.value <= 30) {
+      resPriceAll.textContent = Math.round((+result * +resCountInput.value) / 100 * 93) + ' руб.';
+    } else if (resCountInput.value >= 31) {
+      resPriceAll.textContent = Math.round((+result * +resCountInput.value) / 100 * 90) + ' руб.';
+    }
+  });
+  resTime.addEventListener('change', () => {
+    if (resTime.value == 1) {
+
+      resPriceAll.textContent = Math.round((+result * +resCountInput.value) / 100 * 110) + ' руб.';
+      resPriceOnce.textContent = Math.round((+result) / 100 * 110) + ' руб.';
+
+    } else if (resTime.value == 2) {
+
+      resPriceAll.textContent = Math.round((+result * +resCountInput.value) / 100 * 105) + ' руб.';
+      resPriceOnce.textContent = Math.round((+result) / 100 * 105) + ' руб.';
+
+    } else if (resTime.value == 3) {
+
+      resPriceAll.textContent = +result * +resCountInput.value + ' руб.';
+      resPriceOnce.textContent = +result + ' руб.';
+
+    }
+  })
 });

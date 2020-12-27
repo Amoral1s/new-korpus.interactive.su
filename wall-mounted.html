@@ -9,7 +9,7 @@
   <meta property="og:title" content="" />
   <meta name="keywords" content=""/>
   <!-- <link rel="stylesheet" href="css/libs.min.css"> -->
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="style.css">
 
 </head>
 <body >
@@ -96,6 +96,7 @@
               <p>Диагональ экрана</p>
               <div for="all-height" class="select">
                 <select name="" id="all-height">
+                  <option value="0" selected disabled><b>Выберите диагональ</option>
                   <option value="1"><b>19"</b> 447х459мм</option>
                   <option value="2"><b>21.5"</b> 445x625</option>
                   <option value="3"><b>23.8"</b> 414x644</option>
@@ -115,7 +116,7 @@
               <p>Высота, мм</p>
               <div class="calc-row-numbers__input">
                 <div class="minus"></div>
-                <input type="number" min="1" value="447" id="input-height">
+                <input type="number" min="100" value="100" id="input-height">
                 <div class="plus"></div>
               </div>
             </div>
@@ -123,7 +124,7 @@
               <p>Ширина, мм</p>
               <div class="calc-row-numbers__input">
                 <div class="minus"></div>
-                <input type="number" min="1" value="459" id="input-width">
+                <input type="number" min="200" value="200" id="input-width">
                 <div class="plus"></div>
               </div>
             </div>
@@ -133,10 +134,10 @@
         <div class="calc-wrap-right">
           <img src="img/calc/all-height.png" alt="Размер корпуса">
           <div class="calc-wrap-right__height">
-            447
+            100
           </div>
           <div class="calc-wrap-right__width">
-            459
+            100
           </div>
         </div>
         <!-- /.calc-wrap-right -->
@@ -155,7 +156,7 @@
       <div class="calc-wrap">
         <div class="calc-wrap-left">
           <div class="calc-row">
-            <input name="type" value="70" id="type-one" type="radio" checked>
+            <input name="type" value="70" id="type-one" type="radio">
             <label for="type-one">
               <b>70мм</b>
               <p>
@@ -313,12 +314,16 @@
         <div class="calc-row">
           <div class="calc-row-column">
             <p>Тип крепления</p>
-            <div for="all-height" class="select">
-              <select name="" id="all-height">
+            <div for="dop-stand" class="select">
+              <select name="" id="dop-stand">
                 <option value="0">Крепление не требуется</option>
                 <option value="1">Напольное крепление</option>
                 <option value="2">Настенное крепление</option>
               </select>
+              <div class="toggle-q">? <b class="q-text">
+                В услугу входит фрезерование отверстий под подсветку и акриловые вставки для рассеивания
+              </b></div>
+              
             </div>
           </div>
         </div>
@@ -327,25 +332,34 @@
       <div class="calc-row">
         <input id="diod" type="checkbox">
         <label for="diod">Светодиодная подсветка по периметру</label>
-        <div class="toggle-q">?</div>
-
+        <div class="toggle-q">?<b class="q-text">
+          В услугу входит фрезерование отверстий под подсветку и акриловые вставки для рассеивания
+        </b></div>
+        
       </div>
       <!-- /.calc-row -->
       <div class="calc-row">
         <input id="secur"  type="checkbox">
         <label for="secur">Защита заказа</label>
-        <div class="toggle-q">?</div>
+        <div class="toggle-q">?<b class="q-text">
+          Мы гарантируем что по данному размеру корпуса заказ 
+          будет не возможен для сторонних клиентов
+        </b></div>
+        
       </div>
       <!-- /.calc-row -->
       <div class="calc-row">
         <input id="compl"  type="checkbox">
         <label for="compl">Нужна помощь в подборе комплектующих</label>
-        <div class="toggle-q">?</div>
-
+        <div class="toggle-q">?<b class="q-text">
+          Менеджер поможет вам выбрать комплектующие для вашего корпуса.
+        </b></div>
+        
       </div>
       <!-- /.calc-row -->
     </div>
     <!-- /.calc-section -->
+
     <div class="calc-section disabled">
       <h2 class="title">
         6. Контактная информация
@@ -442,12 +456,12 @@
               </div>
               <div class="calc-row-column">
                 <p>Сроки поставки</p>
-                <div for="all-height" class="select">
+                <div class="select">
                   <select name="" id="res-time">
-                    <option value="1">5-10 дней</option>
-                    <option value="2">10-20 дней</option>
                     <option value="3">20-30 дней</option>
-                    <option value="4">Бронь</option>
+                    <option value="2">10-20 дней</option>
+                    <option value="1">5-10 дней</option>
+                    <option value="3">Бронь</option>
                   </select>
                 </div>
               </div>
@@ -521,7 +535,7 @@
           <h3>Дополнительные опции</h3>
           <div class="result">
             <p>Крепление</p>
-            <b class="res-sec">Нет</b>
+            <b class="res-krepl">Нет</b>
           </div>
           <!-- /.result -->
           <div class="result">
