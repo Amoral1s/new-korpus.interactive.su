@@ -2,7 +2,6 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" id="myViewport" content="width=device-width, maximum-scale=1.0, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="format-detection" content="telephone=no">
   <title>New project</title>
@@ -10,7 +9,7 @@
   <meta property="og:title" content="" />
   <meta name="keywords" content=""/>
   <!-- <link rel="stylesheet" href="css/libs.min.css"> -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css">
 
 </head>
 <body >
@@ -97,16 +96,16 @@
               <p>Диагональ экрана</p>
               <div for="all-height" class="select">
                 <select name="" id="all-height">
-                  <option value=""><b>19"</b> 447х459мм</option>
-                  <option value=""><b>21.5"</b> 445x625</option>
-                  <option value=""><b>23.8"</b> 414x644</option>
-                  <option value=""><b>27"</b> 368x630</option>
-                  <option value=""><b>32"</b> 514x815</option>
-                  <option value=""><b>43"</b> 665x1075</option>
-                  <option value=""><b>50"</b> 750x1230</option>
-                  <option value=""><b>55"</b> 820x1338</option>
-                  <option value=""><b>65"</b> 940x1552</option>
-                  <option value=""><b></b> Другая</option>
+                  <option value="1"><b>19"</b> 447х459мм</option>
+                  <option value="2"><b>21.5"</b> 445x625</option>
+                  <option value="3"><b>23.8"</b> 414x644</option>
+                  <option value="4"><b>27"</b> 368x630</option>
+                  <option value="5"><b>32"</b> 514x815</option>
+                  <option value="6"><b>43"</b> 665x1075</option>
+                  <option value="7"><b>50"</b> 750x1230</option>
+                  <option value="8"><b>55"</b> 820x1338</option>
+                  <option value="9"><b>65"</b> 940x1552</option>
+                  <option value="10"><b></b> Другая</option>
                 </select>
               </div>
             </div>
@@ -116,7 +115,7 @@
               <p>Высота, мм</p>
               <div class="calc-row-numbers__input">
                 <div class="minus"></div>
-                <input type="number" min="1" value="447">
+                <input type="number" min="1" value="447" id="input-height">
                 <div class="plus"></div>
               </div>
             </div>
@@ -124,7 +123,7 @@
               <p>Ширина, мм</p>
               <div class="calc-row-numbers__input">
                 <div class="minus"></div>
-                <input type="number" min="1" value="459">
+                <input type="number" min="1" value="459" id="input-width">
                 <div class="plus"></div>
               </div>
             </div>
@@ -134,10 +133,10 @@
         <div class="calc-wrap-right">
           <img src="img/calc/all-height.png" alt="Размер корпуса">
           <div class="calc-wrap-right__height">
-            000
+            447
           </div>
           <div class="calc-wrap-right__width">
-            000
+            459
           </div>
         </div>
         <!-- /.calc-wrap-right -->
@@ -145,7 +144,7 @@
       <!-- /.calc-wrap -->
     </div>
     <!-- /.calc-section -->
-    <div class="calc-section">
+    <div class="calc-section disabled">
       <h2 class="title">
         2. Глубина корпуса
       </h2>
@@ -156,7 +155,7 @@
       <div class="calc-wrap">
         <div class="calc-wrap-left">
           <div class="calc-row">
-            <input name="type" id="type-one" type="radio" >
+            <input name="type" value="70" id="type-one" type="radio" checked>
             <label for="type-one">
               <b>70мм</b>
               <p>
@@ -167,7 +166,7 @@
           </div>
           <!-- /.calc-row -->
           <div class="calc-row">
-            <input name="type"  id="type-two" type="radio">
+            <input name="type" value="125"  id="type-two" type="radio">
             <label for="type-two">
               <b>125мм</b>
               <p>
@@ -177,7 +176,7 @@
           </div>
           <!-- /.calc-row -->
           <div class="calc-row">
-            <input name="type"  id="type-three" type="radio">
+            <input name="type" value="177"  id="type-three" type="radio">
             <label for="type-three">
               <b>177мм</b>
               <p>
@@ -199,7 +198,7 @@
       <!-- /.calc-wrap -->
     </div>
     <!-- /.calc-section -->
-    <div class="calc-section">
+    <div class="calc-section disabled">
       <h2 class="title">
         3. Параметры активной области
       </h2>
@@ -214,7 +213,7 @@
               <p>Высота, мм</p>
               <div class="calc-row-numbers__input">
                 <div class="minus"></div>
-                <input type="number" min="1" value="447">
+                <input type="number" id="act-height" min="100" value="377">
                 <div class="plus"></div>
               </div>
             </div>
@@ -222,7 +221,7 @@
               <p>Ширина, мм</p>
               <div class="calc-row-numbers__input">
                 <div class="minus"></div>
-                <input type="number" min="1" value="459">
+                <input type="number" id="act-width" min="100" value="389">
                 <div class="plus"></div>
               </div>
             </div>
@@ -230,21 +229,22 @@
           <!-- /.calc-row -->
           <div class="calc-row">
             <div class="calc-row-column">
-              <p>Отступ слева</p>
+              <p>Отступ сверху</p>
               <div class="calc-row-numbers__input">
                 <div class="minus"></div>
-                <input type="number" min="1" value="447">
+                <input type="number" id="act-top" min="1" value="35">
                 <div class="plus"></div>
               </div>
             </div>
             <div class="calc-row-column">
-              <p>Отступ справа</p>
+              <p>Отступ слева</p>
               <div class="calc-row-numbers__input">
                 <div class="minus"></div>
-                <input type="number" min="1" value="459">
+                <input type="number" id="act-left" min="1" value="35">
                 <div class="plus"></div>
               </div>
             </div>
+            
           </div>
           <!-- /.calc-row -->
         </div>
@@ -259,7 +259,7 @@
       </div>
     </div>
     <!-- /.calc-section -->
-    <div class="calc-section">
+    <div class="calc-section disabled">
       <h2 class="title">
         4. Порошковая покраска
       </h2>
@@ -271,7 +271,7 @@
           <p>Рама и лицевая часть</p>
           <div class="calc-row">
             <div class="ral ral-top select">
-              <select name="" id="">
+              <select name="" id="ral-top">
                 <option value="">RAL 0000</option>
               </select>
             </div>
@@ -281,15 +281,15 @@
 
           <div class="calc-row">
             <div class="ral ral-bot select">
-              <select name="" id="">
+              <select name="" id="ral-bot">
                 <option value="">RAL 0000</option>
               </select>
             </div>
           </div>
           <!-- /.calc-row -->
           <div class="calc-row">
-            <input id="ral" type="checkbox">
-            <label for="ral">Покрасная не требуется</label>
+            <input id="ral-none" type="checkbox">
+            <label for="ral-none">Покраска не требуется</label>
           </div>
           <!-- /.calc-row -->
         </div>
@@ -302,7 +302,7 @@
       <!-- /.calc-wrap -->
     </div>
     <!-- /.calc-section -->
-    <div class="calc-section">
+    <div class="calc-section disabled">
       <h2 class="title">
         5. Дополнительные опции
       </h2>
@@ -315,9 +315,9 @@
             <p>Тип крепления</p>
             <div for="all-height" class="select">
               <select name="" id="all-height">
-                <option value="">Крепление не требуется</option>
-                <option value="">Напольное крепление</option>
-                <option value="">Настенное крепление</option>
+                <option value="0">Крепление не требуется</option>
+                <option value="1">Напольное крепление</option>
+                <option value="2">Настенное крепление</option>
               </select>
             </div>
           </div>
@@ -346,7 +346,7 @@
       <!-- /.calc-row -->
     </div>
     <!-- /.calc-section -->
-    <div class="calc-section">
+    <div class="calc-section disabled">
       <h2 class="title">
         6. Контактная информация
       </h2>
@@ -356,16 +356,16 @@
       <div class="calc-form">
         <div class="calc-form-left">
           <label for="">Название организации</label>
-          <input type="text" placeholder="ООО Огранизация">
+          <input class="i-org" type="text" placeholder="ООО Огранизация">
           
           <label for="">Контактное лицо</label>
-          <input type="text" placeholder="Ваше имя">
+          <input class="i-name" type="text" placeholder="Ваше имя">
 
           <label for="">Телефон</label>
-          <input type="tel" placeholder="+7 (___) ___-__-__">
+          <input class="i-phone" type="tel" placeholder="+7 (___) ___-__-__">
 
           <label for="">Электронная почта</label>
-          <input type="email" placeholder="example@mail.ru">
+          <input class="i-email" type="email" placeholder="example@mail.ru">
 
         </div>
         <!-- /.calc-form-left -->
@@ -375,7 +375,7 @@
         </div>
         <!-- /.calc-form-right -->
         <div class="calc-form-submit">
-          <button class="button alt calculated" type="button">Получить расчет</button>
+          <button class="button alt calculated disabled" type="button">Получить расчет</button>
           <small>
             Нажимая кнопку, я соглашаюсь с условиями сайта и <a href="/privacy-policy">Политикой конфиденциальности</a>
           </small>
@@ -390,53 +390,39 @@
   <div class="calc-popup">
     <h2>Проверьте ваш заказ</h2>
     <div class="calc-popup-wrap">
-      
       <div class="calc-popup-wrap-left">
         <div class="calc-popup-wrap-item">
           <h3>Корпус</h3>
           <div class="result">
             <p>Длина</p>
-            <b>000</b>
+            <b class="res-width">000</b>
           </div>
           <!-- /.result -->
           <div class="result">
             <p>Ширина</p>
-            <b>000</b>
+            <b class="res-height">000</b>
           </div>
           <!-- /.result -->
           <div class="result">
             <p>Глубина</p>
-            <b>000</b>
+            <b class="res-deep">000</b>
           </div>
           <!-- /.result -->
         </div>
         <!-- /.calc-popup-wrap-item -->
         
-        <div class="calc-popup-wrap-item">
-          <h3>Основание</h3>
-          <div class="result">
-            <p>Длина</p>
-            <b>000</b>
-          </div>
-          <!-- /.result -->
-          <div class="result">
-            <p>Ширина</p>
-            <b>000</b>
-          </div>
-          <!-- /.result -->
-        </div>
-        <!-- /.calc-popup-wrap-item -->
+        
         
         <div class="calc-popup-wrap-item">
           <h3>Цвет RAL</h3>
           <div class="result">
             <p>Рама и лицевая часть</p>
-            <b>000</b>
+            <b  class="res-ral-top">Нет</b>
           </div>
           <!-- /.result -->
           <div class="result">
             <p>Тыловая часть</p>
-            <b>000</b>
+            <b class="res-ral-bot">Нет</b>
           </div>
           <!-- /.result -->
         </div>
@@ -450,15 +436,18 @@
                 <p>Количество</p>
                 <div class="calc-row-numbers__input">
                   <div class="minus"></div>
-                  <input type="number" min="1" value="447">
+                  <input type="number"  class="res-count" min="1" value="1">
                   <div class="plus"></div>
                 </div>
               </div>
               <div class="calc-row-column">
                 <p>Сроки поставки</p>
                 <div for="all-height" class="select">
-                  <select name="" id="all-height">
-                    <option value="">20-30 дней</option>
+                  <select name="" id="res-time">
+                    <option value="1">5-10 дней</option>
+                    <option value="2">10-20 дней</option>
+                    <option value="3">20-30 дней</option>
+                    <option value="4">Бронь</option>
                   </select>
                 </div>
               </div>
@@ -473,12 +462,12 @@
         <div class="calc-popup-wrap-item calc-submit">
           <div class="result">
             <p>Цена за еденицу</p>
-            <b>000</b>
+            <b class="res-price-once">000</b>
           </div>
           <!-- /.result -->
           <div class="result">
             <p>Стоимость партии</p>
-            <b>000</b>
+            <b class="res-price-all">000</b>
           </div>
           <!-- /.result -->
          <div class="calc-row buttons">
@@ -494,12 +483,12 @@
           <h3>Активная область экрана</h3>
           <div class="result">
             <p>Длина</p>
-            <b>000</b>
+            <b class="res-act-width">000</b>
           </div>
           <!-- /.result -->
           <div class="result">
             <p>Ширина</p>
-            <b>000</b>
+            <b class="res-act-height">000</b>
           </div>
           <!-- /.result -->
         </div>
@@ -508,22 +497,22 @@
           <h3>Смещение активной области</h3>
           <div class="result">
             <p>Слева</p>
-            <b>000</b>
+            <b  class="res-act-left">000</b>
           </div>
           <!-- /.result -->
           <div class="result">
             <p>Справа</p>
-            <b>000</b>
+            <b class="res-act-right">000</b>
           </div>
           <!-- /.result -->
           <div class="result">
             <p>Сверху</p>
-            <b>000</b>
+            <b class="res-act-top">000</b>
           </div>
           <!-- /.result -->
           <div class="result">
             <p>Снизу</p>
-            <b>000</b>
+            <b class="res-act-bot">000</b>
           </div>
           <!-- /.result -->
         </div>
@@ -531,18 +520,23 @@
         <div class="calc-popup-wrap-item">
           <h3>Дополнительные опции</h3>
           <div class="result">
+            <p>Крепление</p>
+            <b class="res-sec">Нет</b>
+          </div>
+          <!-- /.result -->
+          <div class="result">
             <p>Защита заказа</p>
-            <b>000</b>
+            <b class="res-sec">Нет</b>
           </div>
           <!-- /.result -->
           <div class="result">
             <p>Светодиодная подсветка</p>
-            <b>000</b>
+            <b class="res-diod">Нет</b>
           </div>
           <!-- /.result -->
           <div class="result">
             <p>Подбор комплектующих</p>
-            <b>000</b>
+            <b class="res-compl">Нет</b>
           </div>
           <!-- /.result -->
         </div>
@@ -552,22 +546,22 @@
             при заказе партии</h3>
           <div class="result">
             <p>5 - 10 шт</p>
-            <b>000</b>
+            <b>3%</b>
           </div>
           <!-- /.result -->
           <div class="result">
             <p>11 - 15 шт</p>
-            <b>000</b>
+            <b>5%</b>
           </div>
           <!-- /.result -->
           <div class="result">
             <p>16 - 30 шт</p>
-            <b>000</b>
+            <b>7%</b>
           </div>
           <!-- /.result -->
           <div class="result">
             <p>30 шт и более</p>
-            <b>000</b>
+            <b>10%</b>
           </div>
           <!-- /.result -->
         </div>
@@ -670,5 +664,6 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <!-- <script src="js/libs.min.js"></script> -->
   <script src="js/common.js"></script>
+  <script src="js/calc-wall.js"></script>
 </body>
 </html>

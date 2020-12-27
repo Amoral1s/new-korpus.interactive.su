@@ -1,9 +1,6 @@
 jQuery(document).ready(function ($) {
 
-  $('.calculated').on('click', function () { 
-    $('.calc-overlay').fadeIn(200);
-    $('.calc-popup').fadeIn(200);
-   });
+  
   $('.calc-close').on('click', function () { 
     $('.calc-overlay').fadeOut(200);
     $('.calc-popup').fadeOut(200);
@@ -113,6 +110,33 @@ jQuery(document).ready(function ($) {
     $('.overlay').fadeOut(200);
     $('.popup').fadeOut(200);
   });
+
+  $(".wpcf7").on('wpcf7mailsent', function(event){
+    //alert('GOOD');
+    $('#thx').fadeIn(200);
+    //Скрытие поп окна автоматически, через 5,5 секнд
+    $('.overlay').fadeIn(300);
+
+    setTimeout(function(){
+      $('.overlay').fadeOut(300);
+      $('.popup').fadeOut(300);
+      $('#thx').fadeOut(200);
+    },2500);  //3500 = 3,5 секунды
+    
+    setTimeout(function(){$('.popup').fadeOut(300);},2700); 
+    setTimeout(function(){$('#calc').fadeOut(300);},2700); 
+    
+    setTimeout(function(){$('.overlay').fadeOut(300);},2700);
+  });
+
+  $(".wpcf7").on('wpcf7invalid', function(event){
+    alert('Ошибка! Заполните все поля правильно и поторите попытку.');
+  });
+  $(".wpcf7").on('wpcf7mailfailed', function(event){
+    alert('Ошибка! Попробуйте отправить еще раз!');
+  });
+
+    
 
 
 });
