@@ -187,6 +187,9 @@ jQuery(document).ready(function ($) {
     if (actTopActual == 35 || actTop.value == 34) {
       alert('Значение не может быть меньше 35мм!');
       actTop.value = 35;
+    } else if (actTop.value > inputHeight.value - actHeight.value - 35) {
+      alert(`Значение не может быть больше ${inputHeight.value - actHeight.value - 35}мм!`);
+      actTop.value = inputHeight.value - actHeight.value - 35;
     } else {
       if (actTopActual > actTop.value) {
         if (actTopActual == actTop.value) {
@@ -207,9 +210,13 @@ jQuery(document).ready(function ($) {
 
   });
   actLeft.addEventListener('change', () => {
+    console.log(inputWidth.value - actWidth.value - 35)
     if (actLeftActual == 35 || actLeft.value == 34) {
       alert('Значение не может быть меньше 35мм!');
       actLeft.value = 35;
+    } else if (actLeft.value > inputWidth.value - actWidth.value - 35) {
+      alert(`Значение не может быть больше ${inputWidth.value - actWidth.value - 35}мм!`);
+      actLeft.value = inputWidth.value - actWidth.value - 35;
     } else {
       if (actLeftActual > actLeft.value) {
         if (actLeftActual == actLeft.value) {
@@ -460,7 +467,6 @@ jQuery(document).ready(function ($) {
 
       resPriceAll.textContent = +result * +resCountInput.value + ' руб.';
       resPriceOnce.textContent = +result + ' руб.';
-
     }
   })
 });
