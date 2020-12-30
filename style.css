@@ -870,7 +870,7 @@ section, footer {
   padding: 40px;
   border-radius: 20px;
   background-color: #fff;
-  z-index: 50;
+  z-index: 150;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -1024,7 +1024,7 @@ section, footer {
   background-color: rgba(0, 0, 0, 0.3);
   width: 100%;
   height: 100%;
-  z-index: 40;
+  z-index: 140;
 }
 
 .calc label {
@@ -1119,6 +1119,19 @@ section, footer {
   position: relative;
   width: max-content;
   max-width: 100%;
+}
+
+.calc-row input[type="text"] {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: #FFFFFF;
+  border: 1px solid #E3E3E3;
+  border-radius: 7px;
+  padding: 20px 50px 20px 20px;
+  box-shadow: none;
+  margin-top: 5px;
 }
 
 .calc-row .toggle-q {
@@ -1386,6 +1399,60 @@ section, footer {
   display: block;
 }
 
+.calc-ral {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  max-width: 1200px;
+  padding: 50px;
+  border-radius: 45px;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  z-index: 200;
+  display: none;
+  overflow-y: auto;
+  max-height: 90%;
+}
+
+.calc-ral-wrap {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.calc-ral-wrap__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  width: calc(100% / 17 - 2px);
+  margin-right: 2px;
+  margin-bottom: 2px;
+  font-weight: 400;
+  font-size: 14px;
+  min-height: 40px;
+  cursor: pointer;
+  color: #ffffff;
+  transition: 0.3s;
+}
+
+.calc-ral-wrap__item:hover {
+  color: #000000;
+  border: 4px solid #ffffff;
+  transition: 0.3s;
+}
+
+.calc-ral .close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 40px;
+  cursor: pointer;
+}
+
 @media (max-width: 1199px) {
   .calc-popup {
     max-width: 95%;
@@ -1396,6 +1463,9 @@ section, footer {
   }
   .call-left {
     width: 35%;
+  }
+  .calc-ral {
+    max-width: 95%;
   }
 }
 
@@ -1719,6 +1789,9 @@ section, footer {
   .calc-popup-wrap {
     padding-bottom: 340px;
   }
+  .calc-ral-wrap__item {
+    width: calc(11% - 2px);
+  }
 }
 
 @media (max-width: 767px) {
@@ -1891,6 +1964,9 @@ section, footer {
   .popup {
     padding: 40px 25px;
     max-width: calc(100% - 40px);
+  }
+  .calc-ral-wrap__item {
+    width: calc(33% - 2px);
   }
 }
 

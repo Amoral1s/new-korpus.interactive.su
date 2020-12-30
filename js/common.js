@@ -5,6 +5,10 @@ jQuery(document).ready(function ($) {
     $('.calc-overlay').fadeOut(200);
     $('.calc-popup').fadeOut(200);
    });
+  $('.calc-ral .close').on('click', function () { 
+    $('.overlay').fadeOut(200);
+    $('.calc-ral').fadeOut(200);
+  });
 
   $(".up").click(function () {
     var elementClick = $(this).attr("href");
@@ -109,6 +113,7 @@ jQuery(document).ready(function ($) {
   $('.overlay').on('click', function() {
     $('.overlay').fadeOut(200);
     $('.popup').fadeOut(200);
+    $('.calc-ral').fadeOut(200);
   });
 
   $(".wpcf7").on('wpcf7mailsent', function(event){

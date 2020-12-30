@@ -548,7 +548,7 @@
 		padding: 40px
 		border-radius: 20px
 		background-color: #fff
-		z-index: 50
+		z-index: 150
 		top: 50%
 		left: 50%
 		transform: translate(-50%, -50%)
@@ -649,7 +649,7 @@
 		background-color: rgba(#000, .3)
 		width: 100%
 		height: 100%
-		z-index: 40
+		z-index: 140
 	label
 		color: #141414
 	&-form
@@ -718,6 +718,17 @@
 		position: relative
 		width: max-content
 		max-width: 100%
+		input[type="text"]
+			width: 100%
+			appearance: none
+			-webkit-appearance: none
+			-moz-appearance: none
+			background: #FFFFFF
+			border: 1px solid #E3E3E3
+			border-radius: 7px
+			padding: 20px 50px 20px 20px
+			box-shadow: none
+			margin-top: 5px
 		.toggle-q
 			position: absolute
 			top: -10px
@@ -915,7 +926,50 @@
 		display: block
 
 
-
+.calc-ral
+	position: fixed
+	top: 50%
+	left: 50%
+	width: 100%
+	max-width: 1200px
+	padding: 50px
+	border-radius: 45px
+	transform: translate(-50%, -50%)
+	background-color: #fff
+	z-index: 200
+	display: none
+	overflow-y: auto
+	max-height: 90%
+	&-wrap
+		margin-top: 50px
+		display: flex
+		flex-wrap: wrap
+		justify-content: flex-start
+		align-items: stretch
+		&__item
+			display: flex
+			justify-content: center
+			align-items: center
+			background-color: #000
+			width: calc(100% / 17 - 2px)
+			margin-right: 2px
+			margin-bottom: 2px
+			font-weight: 400
+			font-size: 14px
+			min-height: 40px
+			cursor: pointer
+			color: #ffffff
+			transition: 0.3s
+			&:hover
+				color: #000000
+				border: 4px solid #ffffff
+				transition: 0.3s
+	.close
+		position: absolute
+		top: 10px
+		right: 20px
+		font-size: 40px
+		cursor: pointer
 
 
 

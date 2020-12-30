@@ -242,6 +242,48 @@ jQuery(document).ready(function ($) {
 
 
   //4 экран
+  ralTop.addEventListener('click', (e) => {
+    e.preventDefault();
+    $('.overlay').fadeIn(200);
+    $('.top-ral-popup').fadeIn(200);
+
+    const calcRalWrapTopp = document.querySelector('.calc-ral-topp');
+
+    calcRalWrapTopp.addEventListener('click', (e) => {
+      let target = e.target;
+      ralTop.value = target.textContent;
+      
+      $('.overlay').fadeOut(200);
+      $('.calc-ral').fadeOut(200);
+      if (ralBot.value != 0 && ralTop.value != 0) {
+        calcSections[4].classList.remove('disabled');
+        calcSections[5].classList.remove('disabled');
+      }
+    });
+  });
+
+  ralBot.addEventListener('click', (e) => {
+    e.preventDefault();
+    $('.overlay').fadeIn(200);
+    $('.bot-ral-popup').fadeIn(200);
+
+
+    const calcRalWrapBott = document.querySelector('.calc-ral-bott');
+
+    calcRalWrapBott.addEventListener('click', (e) => {
+      let target = e.target;
+      ralBot.value = target.textContent;
+      
+      $('.overlay').fadeOut(200);
+      $('.calc-ral').fadeOut(200);
+      if (ralBot.value != 0 && ralTop.value != 0) {
+        calcSections[4].classList.remove('disabled');
+        calcSections[5].classList.remove('disabled');
+      }
+    });
+  });
+
+
   ralNone.addEventListener('change', () => {
     if (ralNone.checked) {
       ralBot.classList.add('disabled');
