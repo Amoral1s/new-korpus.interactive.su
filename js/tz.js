@@ -77,11 +77,6 @@ jQuery(document).ready(function ($) {
     });
 
   };
-
-
-  
- 
-
   opt.addEventListener('click', (e) => {
     e.preventDefault();
     $('.overlay').fadeIn(200);

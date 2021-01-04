@@ -113,7 +113,6 @@ jQuery(document).ready(function ($) {
   $('.overlay').on('click', function() {
     $('.overlay').fadeOut(200);
     $('.popup').fadeOut(200);
-    $('.options').fadeOut(200);
 
     $('.calc-ral').fadeOut(200);
   });

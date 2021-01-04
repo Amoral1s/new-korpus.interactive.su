@@ -112,7 +112,7 @@
               </div>
             </div>
           </div>
-          <div class="calc-row">
+          <div class="calc-row mob-column">
             <div class="calc-row-column">
               <p>Высота, мм</p>
               <div class="calc-row-numbers__input">
@@ -126,6 +126,14 @@
               <div class="calc-row-numbers__input">
                 <div class="minus"></div>
                 <input type="number" min="100" value="100" id="input-width">
+                <div class="plus"></div>
+              </div>
+            </div>
+            <div class="calc-row-column">
+              <p>Глубина, мм</p>
+              <div class="calc-row-numbers__input" style="pointer-events: none; opacity: 0.5;">
+                <div class="minus"></div>
+                <input type="number" min="70" value="70" >
                 <div class="plus"></div>
               </div>
             </div>
@@ -146,63 +154,9 @@
       <!-- /.calc-wrap -->
     </div>
     <!-- /.calc-section -->
-    <div class="calc-section disabled">
+    <div class="calc-section ">
       <h2 class="title">
-        2. Глубина корпуса
-      </h2>
-      <p class="subtitle">
-        Выберите модификацию тыловой части корпуса под размещение электроники <br>
-        Каждый тип имеет фиксированное расположение комплектующих согласно блок схеме
-      </p>
-      <div class="calc-wrap">
-        <div class="calc-wrap-left">
-          <div class="calc-row">
-            <input name="type" value="70" id="type-one" type="radio">
-            <label for="type-one">
-              <b>70мм</b>
-              <p>
-                Прямая тыловая часть с внутренним отсеком для 
-                HDMI/VGA инвертора. Чаще всего используется как монитор
-              </p>
-            </label>
-          </div>
-          <!-- /.calc-row -->
-          <div class="calc-row">
-            <input name="type" value="125"  id="type-two" type="radio">
-            <label for="type-two">
-              <b>125мм</b>
-              <p>
-                Узкий отсек блока электроники с дверцей Используется под форм фактор Thin-ITX
-              </p>
-            </label>
-          </div>
-          <!-- /.calc-row -->
-          <div class="calc-row">
-            <input name="type" value="177"  id="type-three" type="radio">
-            <label for="type-three">
-              <b>177мм</b>
-              <p>
-                Широкий отсек блока электроники с дверцей
-                Используется под форм фактор ATX
-              </p>
-            </label>
-          </div>
-          <!-- /.calc-row -->
-        </div>
-        <!-- /.calc-wrap-left --> 
-        <div class="calc-wrap-right">
-          <div class="calc-row">
-            <img src="img/calc/deep.png" alt="Глубина корпуса">
-          </div>
-        </div>
-        <!-- /.calc-wrap-right -->
-      </div>
-      <!-- /.calc-wrap -->
-    </div>
-    <!-- /.calc-section -->
-    <div class="calc-section disabled">
-      <h2 class="title">
-        3. Параметры активной области
+        2. Параметры активной области
       </h2>
       <p class="subtitle">
         Рекомендуем указывать размер согласно размеру видимой или активной 
@@ -261,9 +215,241 @@
       </div>
     </div>
     <!-- /.calc-section -->
-    <div class="calc-section disabled">
+
+    <div class="calc-section ">
       <h2 class="title">
-        4. Порошковая покраска
+        3. Габариты колонны
+      </h2>
+      <p class="subtitle">
+        Укажите габариты колонны
+      </p>
+      <div class="calc-wrap">
+        <div class="calc-wrap-left">
+          <div class="calc-row  mob-column">
+            <div class="calc-row-column">
+              <p>Высота, мм</p>
+              <div class="calc-row-numbers__input">
+                <div class="minus"></div>
+                <input type="number" id="col-height" min="100" value="400">
+                <div class="plus"></div>
+              </div>
+            </div>
+            <div class="calc-row-column">
+              <p>Ширина, мм</p>
+              <div class="calc-row-numbers__input">
+                <div class="select min-select">
+                  <select name="" id="col-width">
+                    <option value="300">300</option>
+                    <option value="350">350</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="calc-row-column">
+              <p>Глубина, мм</p>
+              <div class="calc-row-numbers__input">
+                <div class="select min-select">
+                  <select name="" id="col-deep">
+                    <option value="200">200</option>
+                    <option value="300">300</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          <!-- /.calc-row -->
+          
+        </div>
+        <!-- /.calc-wrap-lect -->
+        <div class="calc-wrap-right">
+          <div class="calc-row act-wrap">
+            <img src="img/assets/column.png" alt="Колонна">
+          </div>
+        </div>
+        <!-- /.calc-wrapright -->
+      </div>
+    </div>
+    <!-- /.calc-section -->
+
+    <div class="calc-section ">
+      <h2 class="title">
+        4. Габариты основания
+      </h2>
+      <p class="subtitle">
+        Укажите габариты колонны
+      </p>
+      <div class="calc-wrap">
+        <div class="calc-wrap-left">
+          <div class="calc-row  mob-column">
+            <div class="calc-row-column">
+              <p>Высота, мм</p>
+              <div class="calc-row-numbers__input">
+                <div class="minus"></div>
+                <input type="number" id="act-height" min="100" value="300">
+                <div class="plus"></div>
+              </div>
+            </div>
+            <div class="calc-row-column">
+              <p>Ширина, мм</p>
+              <div class="calc-row-numbers__input">
+                <div class="minus"></div>
+                <input type="number" id="act-width" min="100" value="300">
+                <div class="plus"></div>
+              </div>
+            </div>
+            <div class="calc-row-column">
+              <p>Глубина, мм</p>
+              <div class="calc-row-numbers__input">
+                <div class="minus"></div>
+                <input type="number" id="act-width" min="100" value="300">
+                <div class="plus"></div>
+              </div>
+            </div>
+          </div>
+          <!-- /.calc-row -->
+          
+        </div>
+        <!-- /.calc-wrap-lect -->
+        <div class="calc-wrap-right">
+          <div class="calc-row act-wrap">
+            <img src="img/assets/osn.png" alt="Колонна">
+          </div>
+        </div>
+        <!-- /.calc-wrapright -->
+      </div>
+    </div>
+    <!-- /.calc-section -->
+
+    <div class="calc-section ">
+      <h2 class="title">
+        5. Габариты основания
+      </h2>
+      <p class="subtitle">
+        Укажите габариты колонны
+      </p>
+      <div class="calc-wrap">
+        <div class="calc-wrap-left">
+          <div class="calc-row  mob-column">
+            <div class="calc-row-column">
+              <p>Высота, мм</p>
+              <div class="calc-row-numbers__input">
+                <div class="minus"></div>
+                <input type="number" id="act-height" min="100" value="300">
+                <div class="plus"></div>
+              </div>
+            </div>
+            <div class="calc-row-column">
+              <p>Ширина, мм</p>
+              <div class="calc-row-numbers__input">
+                <div class="minus"></div>
+                <input type="number" id="act-width" min="100" value="300">
+                <div class="plus"></div>
+              </div>
+            </div>
+            <div class="calc-row-column">
+              <p>Глубина, мм</p>
+              <div class="calc-row-numbers__input">
+                <div class="minus"></div>
+                <input type="number" id="act-width" min="100" value="300">
+                <div class="plus"></div>
+              </div>
+            </div>
+          </div>
+          <!-- /.calc-row -->
+          
+        </div>
+        <!-- /.calc-wrap-lect -->
+        <div class="calc-wrap-right">
+          <div class="calc-row act-wrap">
+            <img src="img/assets/osn.png" alt="Колонна">
+          </div>
+        </div>
+        <!-- /.calc-wrapright -->
+      </div>
+    </div>
+    <!-- /.calc-section -->
+    <div class="calc-section ">
+      <h2 class="title">
+        5. Угол наклона экрана
+      </h2>
+      <p class="subtitle">
+        Выберите тип регулировки и укажите угол наклона экрана
+      </p>
+      <div class="calc-wrap">
+        <div class="calc-wrap-left">
+          <div class="calc-row">
+            <div class="calc-row-column">
+              <p>Регулировка экрана</p>
+              <div for="all-height" class="select">
+                <select name="" id="all-height">
+                  <option value="1"><b>Без регулировки</option>
+                  <option value="2"><b>Механическая регулировка</option>
+                  <option value="3"><b>Электро регулировка</option>
+                </select>
+              </div>
+              <div class="calc-row-column" style="margin-top: 20px">
+                <p>Угол наклона</p>
+                <div class="calc-row-numbers__input">
+                  <div class="minus"></div>
+                  <input type="number" id="dg" min="1" value="45">
+                  <div class="plus"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.calc-row -->
+          <div class="calc-row">
+            <div class="calc-row-column">
+              <p>Регулировка высоты</p>
+              <div for="all-height" class="select">
+                <select name="" id="all-height">
+                  <option value="1"><b>Без регулировки</option>
+                  <option value="2"><b>Механическая регулировка</option>
+                  <option value="3"><b>Электро регулировка</option>
+                </select>
+              </div>
+              
+            </div>
+          </div>
+          <!-- /.calc-row -->
+          <div class="calc-row">
+            <div class="calc-row-column">
+              <p>От, мм</p>
+              <div class="calc-row-numbers__input">
+                <div class="minus"></div>
+                <input type="number" id="h-o" min="1" value="50">
+                <div class="plus"></div>
+              </div>
+            </div>
+            <div class="calc-row-column">
+              <p>До, мм</p>
+              <div class="calc-row-numbers__input">
+                <div class="minus"></div>
+                <input type="number" id="h-d" min="1" value="100">
+                <div class="plus"></div>
+              </div>
+            </div>
+          </div>
+          <!-- /.calc-row -->
+          
+        </div>
+        <!-- /.calc-wrap-lect -->
+        <div class="calc-wrap-right">
+          <div class="calc-row act-wrap">
+            <img src="img/assets/osn.png" alt="Колонна">
+          </div>
+        </div>
+        <!-- /.calc-wrapright -->
+      </div>
+    </div>
+    <!-- /.calc-section -->
+
+
+
+    <div class="calc-section ">
+      <h2 class="title">
+        6. Порошковая покраска
       </h2>
       <p class="subtitle">
         Выберите цвет покраски корпуса
@@ -285,6 +471,14 @@
             </div>
           </div>
           <!-- /.calc-row -->
+          <p>Основание</p>
+
+          <div class="calc-row">
+            <div class="ral ral-bot select">
+              <input type="text" id="ral-floor" placeholder="RAL 0000">
+            </div>
+          </div>
+          <!-- /.calc-row -->
           <div class="calc-row">
             <input id="ral-none" type="checkbox">
             <label for="ral-none">Покраска не требуется</label>
@@ -300,66 +494,52 @@
       <!-- /.calc-wrap -->
     </div>
     <!-- /.calc-section -->
-    <div class="calc-section disabled">
+    <div class="calc-section ">
       <h2 class="title">
-        5. Дополнительные опции
+        7. Дополнительные опции
       </h2>
       <p class="subtitle">
         Выберите дополнительные услуги
       </p>
-      <div class="calc-wrap">
-        <div class="calc-row">
-          <div class="calc-row-column">
-            <p>Тип крепления</p>
-            <div for="dop-stand" class="select">
-              <select name="" id="dop-stand">
-                <option value="0">Крепление не требуется</option>
-                <option value="1">Напольное крепление</option>
-                <option value="2">Настенное крепление</option>
-              </select>
-              <div class="toggle-q">? <b class="q-text">
-                Крепление имеет вырезы под питание 220 вольт и RJ-45 в нижней части. И не имеет внутреннего отсека
-              </b></div>
-              
+      <div class="calc-wrap column">
+          <div class="calc-row-column mob-width-max">
+            <p>Выберите опции</p>
+            <div class="calc-row" style="width: 100%">
+              <div class="ral ral-top select" style="width: 100%; max-width: 360px">
+                <input type="text" id="options" placeholder="Опции (0)">
+              </div>
             </div>
           </div>
-        </div>
+          <!-- /.calc-row -->
+
+          <div class="calc-row">
+            <input id="secur-no"  type="checkbox">
+            <label for="secur-no">Защита заказа</label>
+            <div class="toggle-q">?<b class="q-text">
+              Мы гарантируем что по данному размеру корпуса заказ 
+              будет не возможен для сторонних клиентов
+            </b></div>
+          </div>
+          <!-- /.calc-row -->
+
+          <div class="calc-row">
+            <input id="compl-no"  type="checkbox">
+            <label for="compl-no">Нужна помощь в подборе комплектующих</label>
+            <div class="toggle-q">?<b class="q-text">
+              Менеджер поможет вам выбрать комплектующие для вашего корпуса.
+            </b></div>
+        
+          </div>
+          <!-- /.calc-row -->
       </div>
     <!-- /.calc-row -->
-      <div class="calc-row">
-        <input id="diod" type="checkbox">
-        <label for="diod">Светодиодная подсветка по периметру</label>
-        <div class="toggle-q">?<b class="q-text">
-          В услугу входит фрезерование отверстий под подсветку и акриловые вставки для рассеивания
-        </b></div>
-        
-      </div>
-      <!-- /.calc-row -->
-      <div class="calc-row">
-        <input id="secur"  type="checkbox">
-        <label for="secur">Защита заказа</label>
-        <div class="toggle-q">?<b class="q-text">
-          Мы гарантируем что по данному размеру корпуса заказ 
-          будет не возможен для сторонних клиентов
-        </b></div>
-        
-      </div>
-      <!-- /.calc-row -->
-      <div class="calc-row">
-        <input id="compl"  type="checkbox">
-        <label for="compl">Нужна помощь в подборе комплектующих</label>
-        <div class="toggle-q">?<b class="q-text">
-          Менеджер поможет вам выбрать комплектующие для вашего корпуса.
-        </b></div>
-        
-      </div>
-      <!-- /.calc-row -->
+      
     </div>
     <!-- /.calc-section -->
 
-    <div class="calc-section disabled">
+    <div class="calc-section ">
       <h2 class="title">
-        6. Контактная информация
+        8. Контактная информация
       </h2>
       <p class="subtitle">
         Расчет стоимости заказа автоматически будет отправлен на указанную почту
@@ -991,6 +1171,209 @@
       <div style="background: #D3D3D3; color: #000000;" class="calc-ral-wrap__item i187">9019</div>
     </div>
   </div>
+  <div class="calc-ral floor-ral-popup">
+    <h2 class="title">Выберите цвет</h2>
+    <div class="close">&times;</div>
+    <div class="calc-ral-wrap calc-ral-floor">
+      <div style="background: #DAC283" class="calc-ral-wrap__item i1">1000</div>
+      <div style="background: #C9B26F" class="calc-ral-wrap__item i2">1001</div>
+      <div style="background: #E1AB50" class="calc-ral-wrap__item i3">1002</div>
+      <div style="background: #FFA714" class="calc-ral-wrap__item i4">1003</div>
+      <div style="background: #DB8701" class="calc-ral-wrap__item i5">1004</div>
+      <div style="background: #C97302" class="calc-ral-wrap__item i6">1005</div>
+      <div style="background:#F57B00" class="calc-ral-wrap__item i7">1006</div>
+      <div style="background: #F27710" class="calc-ral-wrap__item i8">1007</div>
+      <div style="background: #A0622F" class="calc-ral-wrap__item i9">1011</div>
+      <div style="background: #E1B717" class="calc-ral-wrap__item i10">1012</div>
+      <div style="background: #F5FBD5; color: #000000;" class="calc-ral-wrap__item i11">1013</div>
+      <div style="background: #EBD491; color: #000000;" class="calc-ral-wrap__item i12">1014</div>
+      <div style="background: #FBDDC5; color: #000000;" class="calc-ral-wrap__item i13">1015</div>
+      <div style="background: #FEFE0C; color: #000000;" class="calc-ral-wrap__item i14">1016</div>
+      <div style="background: #FF8C02" class="calc-ral-wrap__item i15">1017</div>
+      <div style="background: #FFE014; color: #000000;" class="calc-ral-wrap__item i16">1018</div>
+      <div style="background: #A88A70" class="calc-ral-wrap__item i17">1019</div>
+
+      <div style="background: #998041" class="calc-ral-wrap__item i18">1020</div>
+      <div style="background: #FAB001" class="calc-ral-wrap__item i19">1021</div>
+      <div style="background: #FBAF03" class="calc-ral-wrap__item i20">1023</div>
+      <div style="background: #C18934" class="calc-ral-wrap__item i21">1024</div>
+      <div style="background: #A16E03" class="calc-ral-wrap__item i22">1027</div>
+      <div style="background: #FB9101" class="calc-ral-wrap__item i23">1028</div>
+      <div style="background: #E69D01" class="calc-ral-wrap__item i24">1032</div>
+      <div style="background: #FE8E00" class="calc-ral-wrap__item i25">1033</div>
+      <div style="background: #EC9421" class="calc-ral-wrap__item i26">1034</div>
+      <div style="background: #FC5A00" class="calc-ral-wrap__item i27">2000</div>
+      <div style="background: #B60E03" class="calc-ral-wrap__item i28">2001</div>
+      <div style="background: #D50000" class="calc-ral-wrap__item i29">2002</div>
+      <div style="background: #F17712" class="calc-ral-wrap__item i30">2003</div>
+      <div style="background: #E66500" class="calc-ral-wrap__item i31">2004</div>
+      <div style="background: #F17713" class="calc-ral-wrap__item i32">2008</div>
+      <div style="background: #E56503" class="calc-ral-wrap__item i33">2009</div>
+      <div style="background: #C97401" class="calc-ral-wrap__item i34">2010</div>
+
+      <div style="background: #F7750E" class="calc-ral-wrap__item i35">2011</div>
+      <div style="background: #DD784E" class="calc-ral-wrap__item i36">2012</div>
+      <div style="background: #BC0A03" class="calc-ral-wrap__item i37">3000</div>
+      <div style="background: #BF0804" class="calc-ral-wrap__item i38">3001</div>
+      <div style="background: #A80101" class="calc-ral-wrap__item i39">3002</div>
+      <div style="background: #92000D" class="calc-ral-wrap__item i40">3003</div>
+      <div style="background: #680000" class="calc-ral-wrap__item i41">3004</div>
+      <div style="background: #4C0901" class="calc-ral-wrap__item i42">3005</div>
+      <div style="background: #210208" class="calc-ral-wrap__item i43">3007</div>
+      <div style="background: #4E0800" class="calc-ral-wrap__item i44">3009</div>
+      <div style="background: #77052C" class="calc-ral-wrap__item i45">3011</div>
+      <div style="background: #CB5F62" class="calc-ral-wrap__item i46">3012</div>
+      <div style="background: #93000F" class="calc-ral-wrap__item i47">3013</div>
+      <div style="background: #E5525E" class="calc-ral-wrap__item i48">3014</div>
+      <div style="background: #FF8BB0" class="calc-ral-wrap__item i49">3015</div>
+      <div style="background: #A90200" class="calc-ral-wrap__item i50">3016</div>
+      <div style="background: #E8316D" class="calc-ral-wrap__item i51">3017</div>
+
+      <div style="background: #E6062F" class="calc-ral-wrap__item i52">3018</div>
+      <div style="background: #CF0101" class="calc-ral-wrap__item i53">3020</div>
+      <div style="background: #E83E2B" class="calc-ral-wrap__item i54">3022</div>
+      <div style="background: #B70C00" class="calc-ral-wrap__item i55">3027</div>
+      <div style="background: #930501" class="calc-ral-wrap__item i56">3031</div>
+      <div style="background: #903E7C" class="calc-ral-wrap__item i57">4001</div>
+      <div style="background: #91000C" class="calc-ral-wrap__item i58">4002</div>
+      <div style="background: #EB298D" class="calc-ral-wrap__item i59">4003</div>
+      <div style="background: #4E021C" class="calc-ral-wrap__item i60">4004</div>
+      <div style="background: #8D3A9A" class="calc-ral-wrap__item i61">4005</div>
+      <div style="background: #9E035B" class="calc-ral-wrap__item i62">4006</div>
+      <div style="background: #340A3A" class="calc-ral-wrap__item i63">4007</div>
+      <div style="background: #79006D" class="calc-ral-wrap__item i64">4008</div>
+      <div style="background: #95747F" class="calc-ral-wrap__item i65">4009</div>
+      <div style="background: #CA0E4E" class="calc-ral-wrap__item i66">4010</div>
+      <div style="background: #031C5C" class="calc-ral-wrap__item i67">5000</div>
+      <div style="background: #12324E" class="calc-ral-wrap__item i68">5001</div>
+
+      <div style="background: #000667" class="calc-ral-wrap__item i69">5002</div>
+      <div style="background: #0B004A" class="calc-ral-wrap__item i70">5003</div>
+      <div style="background: #0B0529" class="calc-ral-wrap__item i71">5004</div>
+      <div style="background: #001681" class="calc-ral-wrap__item i72">5005</div>
+      <div style="background: #0B4B7E" class="calc-ral-wrap__item i73">5007</div>
+      <div style="background: #0C0329" class="calc-ral-wrap__item i74">5008</div>
+      <div style="background: #02386D" class="calc-ral-wrap__item i75">5009</div>
+      <div style="background: #001780" class="calc-ral-wrap__item i76">5010</div>
+      <div style="background: #0A0629" class="calc-ral-wrap__item i77">5011</div>
+      <div style="background: #0F74BC" class="calc-ral-wrap__item i78">5012</div>
+      <div style="background: #080247" class="calc-ral-wrap__item i79">5013</div>
+      <div style="background: #42667E" class="calc-ral-wrap__item i80">5014</div>
+      <div style="background: #0062B1" class="calc-ral-wrap__item i81">5015</div>
+      <div style="background: #003489" class="calc-ral-wrap__item i82">5017</div>
+      <div style="background: #018A81" class="calc-ral-wrap__item i83">5018</div>
+      <div style="background: #013B70" class="calc-ral-wrap__item i84">5019</div>
+      <div style="background: #03291A" class="calc-ral-wrap__item i85">5020</div>
+
+      <div style="background: #016F6A" class="calc-ral-wrap__item i86">5021</div>
+      <div style="background: #0C0047" class="calc-ral-wrap__item i87">5022</div>
+      <div style="background: #354E8B" class="calc-ral-wrap__item i88">5023</div>
+      <div style="background: #4B8FBD" class="calc-ral-wrap__item i89">5024</div>
+      <div style="background: #006639" class="calc-ral-wrap__item i90">6000</div>
+      <div style="background: #0D6300" class="calc-ral-wrap__item i91">6001</div>
+      <div style="background: #004F08" class="calc-ral-wrap__item i92">6002</div>
+      <div style="background: #10400D" class="calc-ral-wrap__item i93">6003</div>
+      <div style="background: #103A2C" class="calc-ral-wrap__item i94">6004</div>
+      <div style="background: #052819" class="calc-ral-wrap__item i95">6005</div>
+      <div style="background: #2C330A" class="calc-ral-wrap__item i96">6006</div>
+      <div style="background: #1C2200" class="calc-ral-wrap__item i97">6007</div>
+      <div style="background: #1C2200" class="calc-ral-wrap__item i98">6008</div>
+      <div style="background: #1A2201" class="calc-ral-wrap__item i99">6009</div>
+      <div style="background: #46771D" class="calc-ral-wrap__item i100">6010</div>
+      <div style="background: #47713F" class="calc-ral-wrap__item i101">6011</div>
+      <div style="background: #000000" class="calc-ral-wrap__item i102">6012</div>
+
+      <div style="background: #5E643D" class="calc-ral-wrap__item i103">6013</div>
+      <div style="background: #000000" class="calc-ral-wrap__item i104">6014</div>
+      <div style="background: #000000" class="calc-ral-wrap__item i105">6015</div>
+      <div style="background: #0D573E" class="calc-ral-wrap__item i106">6016</div>
+      <div style="background: #45771E" class="calc-ral-wrap__item i107">6017</div>
+      <div style="background: #00A400" class="calc-ral-wrap__item i108">6018</div>
+      <div style="background: #BCE4B4; color: #000000;" class="calc-ral-wrap__item i109">6019</div>
+      <div style="background: #1C2100" class="calc-ral-wrap__item i110">6020</div>
+      <div style="background: #68935D" class="calc-ral-wrap__item i111">6021</div>
+      <div style="background: #1C2200" class="calc-ral-wrap__item i112">6022</div>
+      <div style="background: #00830B" class="calc-ral-wrap__item i113">6024</div>
+      <div style="background: #245600" class="calc-ral-wrap__item i114">6025</div>
+      <div style="background: #09593D" class="calc-ral-wrap__item i115">6026</div>
+      <div style="background: #72BAA2" class="calc-ral-wrap__item i116">6027</div>
+      <div style="background: #012A1C" class="calc-ral-wrap__item i117">6028</div>
+      <div style="background: #0E6304" class="calc-ral-wrap__item i118">6029</div>
+      <div style="background: #017A30" class="calc-ral-wrap__item i119">6032</div>
+
+      <div style="background: #127E7F" class="calc-ral-wrap__item i120">6033</div>
+      <div style="background: #72B4C2" class="calc-ral-wrap__item i121">6034</div>
+      <div style="background: #6F698E" class="calc-ral-wrap__item i122">7000</div>
+      <div style="background: #908F90" class="calc-ral-wrap__item i123">7001</div>
+      <div style="background: #5C633A" class="calc-ral-wrap__item i124">7002</div>
+      <div style="background: #5E653C" class="calc-ral-wrap__item i125">7003</div>
+      <div style="background: #909090" class="calc-ral-wrap__item i126">7004</div>
+      <div style="background: #4E4E4E" class="calc-ral-wrap__item i127">7005</div>
+      <div style="background: #4E542E" class="calc-ral-wrap__item i128">7006</div>
+      <div style="background: #594D11" class="calc-ral-wrap__item i129">7008</div>
+      <div style="background: #2C2C2C" class="calc-ral-wrap__item i130">7009</div>
+      <div style="background: #4E552C" class="calc-ral-wrap__item i131">7010</div>
+      <div style="background: #3D3D3D" class="calc-ral-wrap__item i132">7011</div>
+      <div style="background: #3E375F" class="calc-ral-wrap__item i133">7012</div>
+      <div style="background: #292929" class="calc-ral-wrap__item i134">7014</div>
+      <div style="background: #2C2648" class="calc-ral-wrap__item i135">7015</div>
+      <div style="background: #0B0529" class="calc-ral-wrap__item i136">7016</div>
+      
+      <div style="background: #000000" class="calc-ral-wrap__item i137">7021</div>
+      <div style="background: #1C1C1C" class="calc-ral-wrap__item i138">7022</div>
+      <div style="background: #6F6F6F" class="calc-ral-wrap__item i139">7023</div>
+      <div style="background: #1C163A" class="calc-ral-wrap__item i140">7024</div>
+      <div style="background: #020202" class="calc-ral-wrap__item i141">7026</div>
+      <div style="background: #808080" class="calc-ral-wrap__item i142">7030</div>
+      <div style="background: #335A4D" class="calc-ral-wrap__item i143">7031</div>
+      <div style="background: #B1B791; color: #000000;" class="calc-ral-wrap__item i144">7032</div>
+      <div style="background: #6F6F6F" class="calc-ral-wrap__item i145">7033</div>
+      <div style="background: #6F7551" class="calc-ral-wrap__item i146">7034</div>
+      <div style="background: #C2C2C2" class="calc-ral-wrap__item i147">7035</div>
+      <div style="background: #808080" class="calc-ral-wrap__item i148">7036</div>
+      <div style="background: #6F6F6F" class="calc-ral-wrap__item i149">7037</div>
+      <div style="background: #B1B1B1" class="calc-ral-wrap__item i150">7038</div>
+      <div style="background: #4E4E4E" class="calc-ral-wrap__item i151">7039</div>
+      <div style="background: #919191" class="calc-ral-wrap__item i152">7040</div>
+      <div style="background: #808080" class="calc-ral-wrap__item i153">7042</div>
+
+      <div style="background: #133447" class="calc-ral-wrap__item i154">7043</div>
+      <div style="background: #B1B1B1; color: #000000;" class="calc-ral-wrap__item i155">7044</div>
+      <div style="background: #919191" class="calc-ral-wrap__item i156">7045</div>
+      <div style="background: #70706E" class="calc-ral-wrap__item i157">7046</div>
+      <div style="background: #D3D3D3; color: #000000;" class="calc-ral-wrap__item i158">7047</div>
+      <div style="background: #675500" class="calc-ral-wrap__item i159">8000</div>
+      <div style="background: #8F5704" class="calc-ral-wrap__item i160">8001</div>
+      <div style="background: #6E2E00" class="calc-ral-wrap__item i161">8002</div>
+      <div style="background: #7F410D" class="calc-ral-wrap__item i162">8003</div>
+      <div style="background: #6C2F00" class="calc-ral-wrap__item i163">8004</div>
+      <div style="background: #462A01" class="calc-ral-wrap__item i164">8007</div>
+      <div style="background: #55391F" class="calc-ral-wrap__item i165">8008</div>
+      <div style="background: #22010C" class="calc-ral-wrap__item i166">8011</div>
+      <div style="background: #4C0900" class="calc-ral-wrap__item i167">8012</div>
+      <div style="background: #21010C" class="calc-ral-wrap__item i168">8014</div>
+      <div style="background: #4C031C" class="calc-ral-wrap__item i169">8015</div>
+      <div style="background: #20010C" class="calc-ral-wrap__item i170">8016</div>
+
+      <div style="background: #0A0A0A" class="calc-ral-wrap__item i171">8017</div>
+      <div style="background: #000000" class="calc-ral-wrap__item i172">8019</div>
+      <div style="background: #000000" class="calc-ral-wrap__item i173">8022</div>
+      <div style="background: #AA4B00" class="calc-ral-wrap__item i174">8023</div>
+      <div style="background: #6D2F00" class="calc-ral-wrap__item i175">8024</div>
+      <div style="background: #56361D" class="calc-ral-wrap__item i176">8025</div>
+      <div style="background: #341500" class="calc-ral-wrap__item i177">8028</div>
+      <div style="background: #F5FBD5; color: #000000;" class="calc-ral-wrap__item i178">9000</div>
+      <div style="background: #F4FBD6; color: #000000;" class="calc-ral-wrap__item i179">9001</div>
+      <div style="background: #E3E4DE; color: #000000;" class="calc-ral-wrap__item i180">9002</div>
+      <div style="background: #FDFEFC; color: #000000;" class="calc-ral-wrap__item i181">9003</div>
+      <div style="background: #000000" class="calc-ral-wrap__item i182">9004</div>
+      <div style="background: #000000" class="calc-ral-wrap__item i183">9005</div>
+      <div style="background: #FFFFFF; color: #000000;" class="calc-ral-wrap__item i184">9010</div>
+      <div style="background: #FFFFFF; color: #000000;" class="calc-ral-wrap__item i185">9016</div>
+      <div style="background: #000000" class="calc-ral-wrap__item i186">9017</div>
+      <div style="background: #D3D3D3; color: #000000;" class="calc-ral-wrap__item i187">9019</div>
+    </div>
+  </div>
 
   <section class="call">
     <div class="container">
@@ -1043,7 +1426,7 @@
     </div>
   </footer>
 
-  <div class="overlay"></div>
+  <div class="overlay opt-overlay"></div>
   <div id="thx">
     <div>
       <h2>Спасибо!</h2>
@@ -1079,9 +1462,76 @@
   <a href="#top" class="up"></a>
   <!-- /.up -->
 
+  <div class="options">
+    <div class="close-opt">&times;</div>
+    <div class="options-wrap">
+      <div class="calc-row">
+        <input id="termo" value="Термопринтер"  type="checkbox">
+        <label for="termo">Термопринтер</label>
+      </div>
+      <!-- /.calc-row -->
+      <div class="calc-row">
+        <input id="a4"  type="checkbox" value="Принтер А4">
+        <label for="a4">Принтер А4</label>
+      </div>
+      <!-- /.calc-row -->
+      <div class="calc-row">
+        <input id="doc"  type="checkbox" value="Документ камера">
+        <label for="doc">Документ камера</label>
+      </div>
+      <!-- /.calc-row -->
+      <div class="calc-row">
+        <input id="qr"  type="checkbox" value="QR сканер">
+        <label for="qr">QR сканер</label>
+      </div>
+      <!-- /.calc-row -->
+      <div class="calc-row">
+        <input id="ibp"  type="checkbox" value="ИБП">
+        <label for="ibp">ИБП</label>
+      </div>
+      <!-- /.calc-row -->
+      <div class="calc-row">
+        <input id="nfc"  type="checkbox" value="NFC">
+        <label for="nfc">NFC</label>
+      </div>
+      <!-- /.calc-row -->
+      <div class="calc-row">
+        <input id="web"  type="checkbox" value="Web камера">
+        <label for="web">Web камера</label>
+      </div>
+      <!-- /.calc-row -->
+      <div class="calc-row">
+        <input id="ic"  type="checkbox" value="Индукционная камера">
+        <label for="ic">Индукционная камера</label>
+      </div>
+      <!-- /.calc-row -->
+      <div class="calc-row">
+        <input id="mic"  type="checkbox" value="Микрофон">
+        <label for="mic">Микрофон</label>
+      </div>
+      <!-- /.calc-row -->
+      <div class="calc-row">
+        <input id="clav"  type="checkbox" value="Клавиатура">
+        <label for="clav">Клавиатура</label>
+      </div>
+      <!-- /.calc-row -->
+      <div class="calc-row">
+        <input id="pos"  type="checkbox" value="POS терминал">
+        <label for="pos">POS терминал</label>
+      </div>
+      <!-- /.calc-row -->
+      <div class="calc-row">
+        <input id="pin"  type="checkbox" value="Пин пад">
+        <label for="pin">Пин пад</label>
+      </div>
+      <!-- /.calc-row -->
+      
+    </div>
+  </div>
+
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <!-- <script src="js/libs.min.js"></script> -->
   <script src="js/common.js"></script>
-  <script src="js/calc-wall.js"></script>
+  <script src="js/touch.js"></script>
 </body>
 </html>
