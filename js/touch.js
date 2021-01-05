@@ -185,6 +185,10 @@ jQuery(document).ready(function ($) {
     actWidth.value = inputWidth.value - 70;
 
     calcSections[1].classList.remove('disabled');
+    calcSections[2].classList.remove('disabled');
+    calcSections[3].classList.remove('disabled');
+    calcSections[4].classList.remove('disabled');
+    calcSections[5].classList.remove('disabled');
   });
 
   inputHeight.addEventListener('change', () => {
@@ -193,6 +197,10 @@ jQuery(document).ready(function ($) {
     selectDiag.value = 10;
 
     calcSections[1].classList.remove('disabled');
+    calcSections[2].classList.remove('disabled');
+    calcSections[3].classList.remove('disabled');
+    calcSections[4].classList.remove('disabled');
+    calcSections[5].classList.remove('disabled');
   });
 
   inputWidth.addEventListener('change', () => {
@@ -200,6 +208,10 @@ jQuery(document).ready(function ($) {
     actWidth.value = inputWidth.value - 70;
     selectDiag.value = 10;
     calcSections[1].classList.remove('disabled');
+    calcSections[2].classList.remove('disabled');
+    calcSections[3].classList.remove('disabled');
+    calcSections[4].classList.remove('disabled');
+    calcSections[5].classList.remove('disabled');
   });
 
   //2 экран
@@ -307,8 +319,8 @@ jQuery(document).ready(function ($) {
       $('.overlay').fadeOut(200);
       $('.calc-ral').fadeOut(200);
       if (ralBot.value != 0 && ralTop.value != 0) {
-        calcSections[4].classList.remove('disabled');
-        calcSections[5].classList.remove('disabled');
+        calcSections[6].classList.remove('disabled');
+        calcSections[7].classList.remove('disabled');
       }
     });
   });
@@ -327,8 +339,8 @@ jQuery(document).ready(function ($) {
       $('.overlay').fadeOut(200);
       $('.calc-ral').fadeOut(200);
       if (ralBot.value != 0 && ralTop.value != 0) {
-        calcSections[4].classList.remove('disabled');
-        calcSections[5].classList.remove('disabled');
+        calcSections[6].classList.remove('disabled');
+        calcSections[7].classList.remove('disabled');
       }
     });
   });
@@ -348,8 +360,8 @@ jQuery(document).ready(function ($) {
       $('.overlay').fadeOut(200);
       $('.calc-ral').fadeOut(200);
       if (ralBot.value != 0 && ralTop.value != 0) {
-        calcSections[4].classList.remove('disabled');
-        calcSections[5].classList.remove('disabled');
+        calcSections[6].classList.remove('disabled');
+        calcSections[7].classList.remove('disabled');
       }
     });
   });
@@ -365,8 +377,8 @@ jQuery(document).ready(function ($) {
       ralTop.classList.remove('disabled');
       ralFloor.classList.remove('disabled');
     }
-    calcSections[4].classList.remove('disabled');
-    calcSections[5].classList.remove('disabled');
+    calcSections[6].classList.remove('disabled');
+        calcSections[7].classList.remove('disabled');
 
   });
 
