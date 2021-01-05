@@ -262,7 +262,7 @@
           
         </div>
         <!-- /.calc-wrap-lect -->
-        <div class="calc-wrap-right">
+        <div class="calc-wrap-right mob-responsive-img">
           <div class="calc-row act-wrap">
             <img src="img/assets/column.png" alt="Колонна">
           </div>
@@ -271,6 +271,8 @@
       </div>
     </div>
     <!-- /.calc-section -->
+
+    
 
     <div class="calc-section ">
       <h2 class="title">
@@ -286,7 +288,7 @@
               <p>Высота, мм</p>
               <div class="calc-row-numbers__input">
                 <div class="minus"></div>
-                <input type="number" id="act-height" min="100" value="300">
+                <input type="number" id="osn-height" min="100" value="300">
                 <div class="plus"></div>
               </div>
             </div>
@@ -294,7 +296,7 @@
               <p>Ширина, мм</p>
               <div class="calc-row-numbers__input">
                 <div class="minus"></div>
-                <input type="number" id="act-width" min="100" value="300">
+                <input type="number" id="osn-width" min="100" value="300">
                 <div class="plus"></div>
               </div>
             </div>
@@ -302,7 +304,7 @@
               <p>Глубина, мм</p>
               <div class="calc-row-numbers__input">
                 <div class="minus"></div>
-                <input type="number" id="act-width" min="100" value="300">
+                <input type="number" id="osn-deep" min="100" value="300">
                 <div class="plus"></div>
               </div>
             </div>
@@ -311,56 +313,7 @@
           
         </div>
         <!-- /.calc-wrap-lect -->
-        <div class="calc-wrap-right">
-          <div class="calc-row act-wrap">
-            <img src="img/assets/osn.png" alt="Колонна">
-          </div>
-        </div>
-        <!-- /.calc-wrapright -->
-      </div>
-    </div>
-    <!-- /.calc-section -->
-
-    <div class="calc-section ">
-      <h2 class="title">
-        5. Габариты основания
-      </h2>
-      <p class="subtitle">
-        Укажите габариты колонны
-      </p>
-      <div class="calc-wrap">
-        <div class="calc-wrap-left">
-          <div class="calc-row  mob-column">
-            <div class="calc-row-column">
-              <p>Высота, мм</p>
-              <div class="calc-row-numbers__input">
-                <div class="minus"></div>
-                <input type="number" id="act-height" min="100" value="300">
-                <div class="plus"></div>
-              </div>
-            </div>
-            <div class="calc-row-column">
-              <p>Ширина, мм</p>
-              <div class="calc-row-numbers__input">
-                <div class="minus"></div>
-                <input type="number" id="act-width" min="100" value="300">
-                <div class="plus"></div>
-              </div>
-            </div>
-            <div class="calc-row-column">
-              <p>Глубина, мм</p>
-              <div class="calc-row-numbers__input">
-                <div class="minus"></div>
-                <input type="number" id="act-width" min="100" value="300">
-                <div class="plus"></div>
-              </div>
-            </div>
-          </div>
-          <!-- /.calc-row -->
-          
-        </div>
-        <!-- /.calc-wrap-lect -->
-        <div class="calc-wrap-right">
+        <div class="calc-wrap-right mob-responsive-img">
           <div class="calc-row act-wrap">
             <img src="img/assets/osn.png" alt="Колонна">
           </div>
@@ -435,9 +388,9 @@
           
         </div>
         <!-- /.calc-wrap-lect -->
-        <div class="calc-wrap-right">
+        <div class="calc-wrap-right mob-responsive-img">
           <div class="calc-row act-wrap">
-            <img src="img/assets/osn.png" alt="Колонна">
+            <img src="img/assets/ugol.png" alt="Колонна">
           </div>
         </div>
         <!-- /.calc-wrapright -->
@@ -566,7 +519,7 @@
         </div>
         <!-- /.calc-form-right -->
         <div class="calc-form-submit">
-          <button class="button alt calculated disabled" type="button">Получить расчет</button>
+          <button class="button alt calculated " type="button">Получить расчет</button>
           <small>
             Нажимая кнопку, я соглашаюсь с условиями сайта и <a href="/privacy-policy">Политикой конфиденциальности</a>
           </small>
@@ -601,9 +554,6 @@
           <!-- /.result -->
         </div>
         <!-- /.calc-popup-wrap-item -->
-        
-        
-        
         <div class="calc-popup-wrap-item">
           <h3>Цвет RAL</h3>
           <div class="result">
@@ -614,6 +564,49 @@
           <div class="result">
             <p>Тыловая часть</p>
             <b class="res-ral-bot">Нет</b>
+          </div>
+          <!-- /.result -->
+          <div class="result">
+            <p>Основание</p>
+            <b class="res-ral-floor">Нет</b>
+          </div>
+          <!-- /.result -->
+        </div>
+        <!-- /.calc-popup-wrap-item -->
+        <div class="calc-popup-wrap-item">
+          <h3>Габариты колонны</h3>
+          <div class="result">
+            <p>Высота</p>
+            <b  class="col-height">000</b>
+          </div>
+          <!-- /.result -->
+          <div class="result">
+            <p>Ширина</p>
+            <b class="col-width">000</b>
+          </div>
+          <!-- /.result -->
+          <div class="result">
+            <p>Глубина</p>
+            <b class="col-deep">000</b>
+          </div>
+          <!-- /.result -->
+        </div>
+        <!-- /.calc-popup-wrap-item -->
+        <div class="calc-popup-wrap-item">
+          <h3>Габариты основания</h3>
+          <div class="result">
+            <p>Высота</p>
+            <b  class="osn-height">000</b>
+          </div>
+          <!-- /.result -->
+          <div class="result">
+            <p>Ширина</p>
+            <b class="osn-width">000</b>
+          </div>
+          <!-- /.result -->
+          <div class="result">
+            <p>Глубина</p>
+            <b class="osn-deep">000</b>
           </div>
           <!-- /.result -->
         </div>
@@ -649,7 +642,6 @@
           
         </div>
         <!-- /.calc-popup-wrap-item -->
-        
         <div class="calc-popup-wrap-item calc-submit">
           <div class="result">
             <p>Цена за еденицу</p>
@@ -711,8 +703,8 @@
         <div class="calc-popup-wrap-item">
           <h3>Дополнительные опции</h3>
           <div class="result">
-            <p>Крепление</p>
-            <b class="res-krepl">Нет</b>
+            <p>Опции</p>
+            <b class="res-opt" style="font-size: 12px;"></b>
           </div>
           <!-- /.result -->
           <div class="result">
@@ -720,11 +712,7 @@
             <b class="res-sec">Нет</b>
           </div>
           <!-- /.result -->
-          <div class="result">
-            <p>Светодиодная подсветка</p>
-            <b class="res-diod">Нет</b>
-          </div>
-          <!-- /.result -->
+          
           <div class="result">
             <p>Подбор комплектующих</p>
             <b class="res-compl">Нет</b>
@@ -759,7 +747,6 @@
         <!-- /.calc-popup-wrap-item -->
       </div>
       <!-- /.calc-popup-wrap-right -->
-      
     </div>
   </div>
   <div class="calc-overlay"></div>

@@ -1631,6 +1631,12 @@ section, footer {
   margin: auto;
 }
 
+.res-opt {
+  max-width: 300px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+
 @media (max-width: 1199px) {
   .calc-popup {
     max-width: 95%;
@@ -2198,6 +2204,9 @@ section, footer {
   }
   .mob-width-max {
     width: 100%;
+  }
+  .mob-responsive-img {
+    height: auto;
   }
 }
 

@@ -438,24 +438,24 @@ jQuery(document).ready(function ($) {
 
   const calcStart = () => {
     //Вневшние габариты (расчет профиля)
-    const gabarity = Math.round((+inputWidth.value * 2 + +inputHeight.value * 2) / 1000 * 300 /*11 300 берется из погонного метра*/);
+    const gabarity = Math.round((+inputWidth.value * 2 + +inputHeight.value * 2) / 1000 * 250 /*11 300 берется из погонного метра*/);
 
-    const fix = 800 + 1200; //11 Уголок *4 + Резка
+    const fix = 800 + 1500; //11 Уголок *4 + Резка
 
     const rezOuter = Math.round(
-      +inputWidth.value * +inputHeight.value / 10000 * 10 /*11 10 - резка лицевая */
+      +inputWidth.value * +inputHeight.value / 10000 * 15 /*11 10 - резка лицевая */
     );
 
     const rezInner = Math.round(
-      +inputWidth.value * +inputHeight.value / 10000 * 15 /*11 10 - резка внутренняя */
+      +inputWidth.value * +inputHeight.value / 10000 * 17 /*11 10 - резка внутренняя */
     );
 
     const kron = Math.round(
-     (+inputHeight.value * 0.3) * 2
+     (+inputHeight.value * 0.2) * 2
     );
 
     const E = Math.round(
-     4 * 15 //Цена кронштейна
+     4 * 16 //Цена кронштейна
     );
     
     let typePlate;
@@ -463,9 +463,9 @@ jQuery(document).ready(function ($) {
     if (deep == 70) {
       typePlate = 300;
     } else if (deep == 125) {
-      typePlate = 800;
+      typePlate = 1300;
     } else if (deep == 177) {
-      typePlate = 1000;
+      typePlate = 1550;
     }
 
     let pokraska;
@@ -482,7 +482,7 @@ jQuery(document).ready(function ($) {
     if (dopStand.value == 1) {
       result = +result + 4500;
     } else if (dopStand.value == 2) {
-      result = +result + 1500;
+      result = +result + 1000;
     }
 
     if (dopDiod.checked) {
@@ -492,27 +492,29 @@ jQuery(document).ready(function ($) {
     if (dopSecur.checked) {
       result = +result + 1000;
     }
+
+    result = +result + 600;
     
     resPriceOnce.textContent = +result + ' руб.';
     resPriceAll.textContent = +result * +resCountInput.value + ' руб.';
     console.log(typePlate)
   };
   resCountInput.addEventListener('change', () => {
-    if (resCountInput.value <= 4) {
+    if (resCountInput.value <= 9) {
       resPriceAll.textContent = +result * +resCountInput.value + ' руб.';
       resPriceOnce.textContent = +result + ' руб.';
-    } else if (resCountInput.value >= 5 && resCountInput.value <= 10) {
+    } /* else if (resCountInput.value >= 1 && resCountInput.value <= 9) {
       resPriceAll.textContent = Math.round((+result * +resCountInput.value) / 100 * 97) + ' руб.';
       resPriceOnce.textContent =  Math.round(+result / 100 * 97) + ' руб.';
-    } else if (resCountInput.value >= 11 && resCountInput.value <= 15) {
+    } */ else if (resCountInput.value >= 10 && resCountInput.value <= 19) {
       resPriceAll.textContent = Math.round((+result * +resCountInput.value) / 100 * 95) + ' руб.';
       resPriceOnce.textContent =  Math.round(+result / 100 * 95) + ' руб.';
 
-    } else if (resCountInput.value >= 16 && resCountInput.value <= 30) {
+    } else if (resCountInput.value >= 20 && resCountInput.value <= 39) {
       resPriceAll.textContent = Math.round((+result * +resCountInput.value) / 100 * 93) + ' руб.';
       resPriceOnce.textContent =  Math.round(+result / 100 * 93) + ' руб.';
 
-    } else if (resCountInput.value >= 31) {
+    } else if (resCountInput.value >= 40) {
       resPriceAll.textContent = Math.round((+result * +resCountInput.value) / 100 * 90) + ' руб.';
       resPriceOnce.textContent =  Math.round(+result / 100 * 90) + ' руб.';
 

@@ -57,13 +57,25 @@ jQuery(document).ready(function ($) {
         actLeft = document.querySelector('#act-left'),
         actTop = document.querySelector('#act-top'),
         actObl = document.querySelector('.act-obl');
-  //Элементы 4 экрана (покраска)
+
+  //Элементы 4 / 5 экрана (Габариты колонны / основания)
+  const osnHeightInput = document.querySelector('#osn-height'),
+        osnWidthtInput = document.querySelector('#osn-width'),
+        osnDeepInput = document.querySelector('#osn-deep'),
+        colHeightInput = document.querySelector('#col-height'),
+        colWidthtInput = document.querySelector('#col-width'),
+        colDeeptInput = document.querySelector('#col-deep');
+
+
+
+
+  //Элементы 6 экрана (покраска)
 
   const ralNone = document.querySelector('#ral-none'),
         ralTop = document.querySelector('#ral-top'),
         ralFloor = document.querySelector('#ral-floor'),
         ralBot = document.querySelector('#ral-bot');
-  //Элементы 6 экрана (Контактные данные)
+  //Элементы 8 экрана (Контактные данные)
   const iOrg = document.querySelector('.i-org'),
         iName = document.querySelector('.i-name'),
         iPhone = document.querySelector('.i-phone'),
@@ -355,8 +367,8 @@ jQuery(document).ready(function ($) {
   //5 экран
   const dopStand = document.querySelector('#dop-stand'),
         dopDiod = document.querySelector('#diod'),
-        dopSecur = document.querySelector('#secur'),
-        dopCompl = document.querySelector('#compl');
+        dopSecur = document.querySelector('#secur-no'),
+        dopCompl = document.querySelector('#compl-no');
 
   //6 экран
   let validation = 4;
@@ -411,9 +423,15 @@ jQuery(document).ready(function ($) {
         resActBot = document.querySelector('.res-act-bot'),
         resRalTop = document.querySelector('.res-ral-top'),
         resRalBot = document.querySelector('.res-ral-bot'),
+        resRalFloor = document.querySelector('.res-ral-floor'),
         resSecur = document.querySelector('.res-sec'),
-        resStand = document.querySelector('.res-krepl'),
-        resDiod = document.querySelector('.res-diod'),
+        resOpt = document.querySelector('.res-opt'),
+        colHeight = document.querySelector('.col-height'),
+        colWidth = document.querySelector('.col-width'),
+        colDeep = document.querySelector('.col-deep'),
+        osnHeight = document.querySelector('.osn-height'),
+        osnWidth = document.querySelector('.osn-width'),
+        osnDeep = document.querySelector('.osn-deep'),
         resCompl = document.querySelector('.res-compl'),
         resCountInput = document.querySelector('.res-count'),
         resTime = document.querySelector('#res-time'),
@@ -435,22 +453,33 @@ jQuery(document).ready(function ($) {
     resActTop.textContent = actTop.value;
     resActBot.textContent = Math.round(inputHeight.value - actHeight.value - actTop.value);
     
+    console.log(osnDeepInput.value)
+    colHeight.textContent = colHeightInput.value;
+    colWidth.textContent = colWidthtInput.value;
+    colDeep.textContent = colDeeptInput.value;
+    osnHeight.textContent = osnHeightInput.value;
+    osnWidth.textContent = osnWidthtInput.value;
+    osnDeep.textContent = osnDeepInput.value;
 
+    const optionsInputs = document.querySelectorAll('.options-wrap input');
+
+    optionsInputs.forEach((elem) => {
+      if (elem.checked) {
+        resOpt.textContent += `${elem.value}. `;
+      }
+    });
+
+    console.log(optionsInputs)
     if (ralNone.checked) {
       resRalTop.textContent = 'Нет';
     resRalBot.textContent = 'Нет';
     } else {
       resRalTop.textContent = ralTop.value;
       resRalBot.textContent = ralBot.value;
+      resRalFloor.textContent = ralFloor.value;
     }
 
-    if (dopStand.value == 0) {
-      resStand.textContent = 'Нет';
-    } else if (dopStand.value == 1) {
-      resStand.textContent = 'Напольное';
-    } else if (dopStand.value == 2) {
-      resStand.textContent = 'Настенное';
-    }
+    
 
     if (dopSecur.checked) {
       resSecur.textContent = 'Да';
@@ -458,11 +487,7 @@ jQuery(document).ready(function ($) {
       resSecur.textContent = 'Нет';
     }
 
-    if (dopDiod.checked) {
-      resDiod.textContent = 'Да';
-    } else {
-      resDiod.textContent = 'Нет';
-    }
+    
 
     if (dopCompl.checked) {
       resCompl.textContent = 'Да';
@@ -478,14 +503,14 @@ jQuery(document).ready(function ($) {
     //Вневшние габариты (расчет профиля)
     const gabarity = Math.round((+inputWidth.value * 2 + +inputHeight.value * 2) / 1000 * 300 /*11 300 берется из погонного метра*/);
 
-    const fix = 800 + 1200; //11 Уголок *4 + Резка
+    const fix = 400 + 2700; //11 Уголок *4 + Резка
 
     const rezOuter = Math.round(
-      +inputWidth.value * +inputHeight.value / 10000 * 10 /*11 10 - резка лицевая */
+      +inputWidth.value * +inputHeight.value / 10000 * 20 /*11 10 - резка лицевая */
     );
 
     const rezInner = Math.round(
-      +inputWidth.value * +inputHeight.value / 10000 * 15 /*11 10 - резка внутренняя */
+      +inputWidth.value * +inputHeight.value / 10000 * 30 /*11 10 - резка внутренняя */
     );
 
     const kron = Math.round(
@@ -495,53 +520,48 @@ jQuery(document).ready(function ($) {
     const E = Math.round(
      4 * 15 //Цена кронштейна
     );
-    
-    
-     let typePlate = 300;
-   
 
     let pokraska;
 
     if (ralNone.checked) {
       pokraska = 0;
     } else {
-      pokraska = Math.round(inputWidth.value * inputHeight.value / 10000 * 35);/*Значение цены покраски*/
+      pokraska = Math.round(inputWidth.value * inputHeight.value / 10000 * 119);/*Значение цены покраски*/
     }
     result = Math.round(
-      +gabarity + +fix + +rezOuter + +rezInner + +kron + +E + +typePlate + +pokraska
+      +gabarity + +fix + +rezOuter + +rezInner + +kron + +E + + +pokraska
     );
-
-    if (dopStand.value == 1) {
-      result = +result + 4500;
-    } else if (dopStand.value == 2) {
-      result = +result + 1500;
-    }
-
-    if (dopDiod.checked) {
-      result = +result + 1200;
-    }
-
-    if (dopSecur.checked) {
-      result = +result + 1000;
-    }
     
+      result = +result + 700 + 6000 + 300;
+
     resPriceOnce.textContent = +result + ' руб.';
     resPriceAll.textContent = +result * +resCountInput.value + ' руб.';
-    console.log(typePlate)
+    
   };
+
+
   resCountInput.addEventListener('change', () => {
-    if (resCountInput.value <= 4) {
+    if (resCountInput.value <= 9) {
       resPriceAll.textContent = +result * +resCountInput.value + ' руб.';
-    } else if (resCountInput.value >= 5 && resCountInput.value <= 10) {
+      resPriceOnce.textContent = +result + ' руб.';
+    } /* else if (resCountInput.value >= 1 && resCountInput.value <= 9) {
       resPriceAll.textContent = Math.round((+result * +resCountInput.value) / 100 * 97) + ' руб.';
-    } else if (resCountInput.value >= 11 && resCountInput.value <= 15) {
+      resPriceOnce.textContent =  Math.round(+result / 100 * 97) + ' руб.';
+    } */ else if (resCountInput.value >= 10 && resCountInput.value <= 19) {
       resPriceAll.textContent = Math.round((+result * +resCountInput.value) / 100 * 95) + ' руб.';
-    } else if (resCountInput.value >= 16 && resCountInput.value <= 30) {
+      resPriceOnce.textContent =  Math.round(+result / 100 * 95) + ' руб.';
+
+    } else if (resCountInput.value >= 20 && resCountInput.value <= 39) {
       resPriceAll.textContent = Math.round((+result * +resCountInput.value) / 100 * 93) + ' руб.';
-    } else if (resCountInput.value >= 31) {
+      resPriceOnce.textContent =  Math.round(+result / 100 * 93) + ' руб.';
+
+    } else if (resCountInput.value >= 40) {
       resPriceAll.textContent = Math.round((+result * +resCountInput.value) / 100 * 90) + ' руб.';
+      resPriceOnce.textContent =  Math.round(+result / 100 * 90) + ' руб.';
+
     }
   });
+
   resTime.addEventListener('change', () => {
     if (resTime.value == 1) {
 
@@ -559,4 +579,5 @@ jQuery(document).ready(function ($) {
       resPriceOnce.textContent = +result + ' руб.';
     }
   });
+
 });
