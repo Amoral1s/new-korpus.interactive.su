@@ -1,4 +1,7 @@
 jQuery(document).ready(function ($) {
+
+  
+  
   //Валидаци
   const calcSections = document.querySelectorAll('.calc-section');
 
@@ -145,14 +148,27 @@ jQuery(document).ready(function ($) {
   });
 
   //2 экран
+  const typeImg = document.querySelector('.type-img');
   const type = document.querySelectorAll('input[name="type"]');
   let deep = 70;
   type.forEach((elem) => {
     elem.addEventListener('click', () => {
+      typeImg.src = elem.dataset.src;
       deep = elem.value;
       calcSections[2].classList.remove('disabled');
       calcSections[3].classList.remove('disabled');
     });
+  });
+
+  
+
+  typeImg.addEventListener('click', () => {
+    $('.img-popup').fadeIn(200);
+    $('.img-popup img').attr('src', typeImg.src);
+  });
+
+  $('.img-popup').on('click', function () { 
+    $(this).fadeOut(200);
   });
 
   //3 экран
@@ -484,14 +500,22 @@ jQuery(document).ready(function ($) {
   resCountInput.addEventListener('change', () => {
     if (resCountInput.value <= 4) {
       resPriceAll.textContent = +result * +resCountInput.value + ' руб.';
+      resPriceOnce.textContent = +result + ' руб.';
     } else if (resCountInput.value >= 5 && resCountInput.value <= 10) {
       resPriceAll.textContent = Math.round((+result * +resCountInput.value) / 100 * 97) + ' руб.';
+      resPriceOnce.textContent =  Math.round(+result / 100 * 97) + ' руб.';
     } else if (resCountInput.value >= 11 && resCountInput.value <= 15) {
       resPriceAll.textContent = Math.round((+result * +resCountInput.value) / 100 * 95) + ' руб.';
+      resPriceOnce.textContent =  Math.round(+result / 100 * 95) + ' руб.';
+
     } else if (resCountInput.value >= 16 && resCountInput.value <= 30) {
       resPriceAll.textContent = Math.round((+result * +resCountInput.value) / 100 * 93) + ' руб.';
+      resPriceOnce.textContent =  Math.round(+result / 100 * 93) + ' руб.';
+
     } else if (resCountInput.value >= 31) {
       resPriceAll.textContent = Math.round((+result * +resCountInput.value) / 100 * 90) + ' руб.';
+      resPriceOnce.textContent =  Math.round(+result / 100 * 90) + ' руб.';
+
     }
   });
   resTime.addEventListener('change', () => {
