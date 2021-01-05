@@ -58,13 +58,20 @@ jQuery(document).ready(function ($) {
         actTop = document.querySelector('#act-top'),
         actObl = document.querySelector('.act-obl');
 
-  //Элементы 4 / 5 экрана (Габариты колонны / основания)
+  //Элементы 3 / 4 экрана (Габариты колонны / основания)
   const osnHeightInput = document.querySelector('#osn-height'),
         osnWidthtInput = document.querySelector('#osn-width'),
         osnDeepInput = document.querySelector('#osn-deep'),
         colHeightInput = document.querySelector('#col-height'),
         colWidthtInput = document.querySelector('#col-width'),
         colDeeptInput = document.querySelector('#col-deep');
+
+  //Элементы 5 экрана (угол)
+  const regStandInput = document.querySelector('#reg-stand'),
+        regGInput = document.querySelector('#reg-g'),
+        regHeightInput = document.querySelector('#reg-height'),
+        regOtInput = document.querySelector('#reg-ot'),
+        regDoInput = document.querySelector('#reg-do');
 
 
 
@@ -369,6 +376,18 @@ jQuery(document).ready(function ($) {
         dopDiod = document.querySelector('#diod'),
         dopSecur = document.querySelector('#secur-no'),
         dopCompl = document.querySelector('#compl-no');
+  const regDoVal = document.querySelector('.reg-do-val'),
+        regOtVal = document.querySelector('.reg-ot-val');
+
+  regHeightInput.addEventListener('change', () => {
+    if (regHeightInput.value == 'Без регулировки') {
+      regDoVal.classList.add('disabled');
+      regOtVal.classList.add('disabled');
+    } else {
+      regDoVal.classList.remove('disabled');
+      regOtVal.classList.remove('disabled');
+    }
+  })
 
   //6 экран
   let validation = 4;
@@ -438,6 +457,12 @@ jQuery(document).ready(function ($) {
         resPriceOnce = document.querySelector('.res-price-once'),
         resPriceAll = document.querySelector('.res-price-all');
 
+  const regStand = document.querySelector('.reg-stand'),
+        regG = document.querySelector('.reg-g'),
+        regHeight = document.querySelector('.reg-height'),
+        regOt = document.querySelector('.reg-ot'),
+        regDo = document.querySelector('.reg-do');
+
 
   //Подсчет
   calculadetBtn.addEventListener('click', () => {
@@ -453,13 +478,25 @@ jQuery(document).ready(function ($) {
     resActTop.textContent = actTop.value;
     resActBot.textContent = Math.round(inputHeight.value - actHeight.value - actTop.value);
     
-    console.log(osnDeepInput.value)
     colHeight.textContent = colHeightInput.value;
     colWidth.textContent = colWidthtInput.value;
     colDeep.textContent = colDeeptInput.value;
     osnHeight.textContent = osnHeightInput.value;
     osnWidth.textContent = osnWidthtInput.value;
     osnDeep.textContent = osnDeepInput.value;
+    
+    regStand.textContent = regStandInput.value;
+    regG.textContent = regGInput.value;
+    regHeight.textContent = regHeightInput.value;
+    
+
+    if (regHeightInput.value == 'Без регулировки') {
+      regOt.textContent = '-';
+      regDo.textContent = '-';
+    } else {
+      regOt.textContent = regOtInput.value;
+      regDo.textContent = regDoInput.value;
+    }
 
     const optionsInputs = document.querySelectorAll('.options-wrap input');
 
