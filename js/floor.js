@@ -539,13 +539,13 @@ jQuery(document).ready(function ($) {
     let typePlate;
 
     if (deep == 70) {
-      typePlate = 300;
+      typePlate = 0;
     } else if (deep == 100) {
-      typePlate = 1300;
+      typePlate = 400;
     } else if (deep == 140) {
-      typePlate = 1550;
+      typePlate = 600;
     } else if (deep == 180) {
-      typePlate = 1550;
+      typePlate = 1000;
     }
 
 
@@ -555,13 +555,13 @@ jQuery(document).ready(function ($) {
     if (ralNone.checked) {
       pokraska = 0;
     } else {
-      pokraska = Math.round(inputWidth.value * inputHeight.value / 10000 * 119);/*Значение цены покраски*/
+      pokraska = Math.round(inputWidth.value * inputHeight.value / 10000 * 35);/*Значение цены покраски*/
     }
     result = Math.round(
       +gabarity + +fix + +rezOuter + +rezInner + +kron + +E + + +pokraska + +typePlate 
     );
     
-      result = +result + 300 + 450 + 300;
+      result = +result + 300 + 450;
 
     resPriceOnce.textContent = +result + ' руб.';
     resPriceAll.textContent = +result * +resCountInput.value + ' руб.';
