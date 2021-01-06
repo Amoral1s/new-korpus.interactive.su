@@ -28,13 +28,13 @@ jQuery(document).ready(function ($) {
 
     optClick();
   });
-   $('.close-opt').on('click', function () { 
-    $('.overlay').fadeOut(200);
-    $('.options').fadeOut(200);
+  $('.close-opt').on('click', function () { 
+  $('.overlay').fadeOut(200);
+  $('.options').fadeOut(200);
 
-    optClick();
+  optClick();
 
-   });
+  });
 
 
   //Валидаци
@@ -61,23 +61,9 @@ jQuery(document).ready(function ($) {
   //Элементы 3 / 4 экрана (Габариты колонны / основания)
   const osnHeightInput = document.querySelector('#osn-height'),
         osnWidthtInput = document.querySelector('#osn-width'),
-        osnDeepInput = document.querySelector('#osn-deep'),
-        colHeightInput = document.querySelector('#col-height'),
-        colWidthtInput = document.querySelector('#col-width'),
-        colDeeptInput = document.querySelector('#col-deep');
-
-  //Элементы 5 экрана (угол)
-  const regStandInput = document.querySelector('#reg-stand'),
-        regGInput = document.querySelector('#reg-g'),
-        regHeightInput = document.querySelector('#reg-height'),
-        regOtInput = document.querySelector('#reg-ot'),
-        regDoInput = document.querySelector('#reg-do');
-
-
-
+        osnDeepInput = document.querySelector('#osn-deep');
 
   //Элементы 6 экрана (покраска)
-
   const ralNone = document.querySelector('#ral-none'),
         ralTop = document.querySelector('#ral-top'),
         ralFloor = document.querySelector('#ral-floor'),
@@ -90,9 +76,6 @@ jQuery(document).ready(function ($) {
         calculadetBtn = document.querySelector('.calculated');
   //1 экран
   if (plus) {
-
-    
-
     plus.forEach((elem) => {
       elem.addEventListener('click', () => {
         let change = new Event ('change');
@@ -185,10 +168,6 @@ jQuery(document).ready(function ($) {
     actWidth.value = inputWidth.value - 70;
 
     calcSections[1].classList.remove('disabled');
-    calcSections[2].classList.remove('disabled');
-    calcSections[3].classList.remove('disabled');
-    calcSections[4].classList.remove('disabled');
-    calcSections[5].classList.remove('disabled');
   });
 
   inputHeight.addEventListener('change', () => {
@@ -197,10 +176,6 @@ jQuery(document).ready(function ($) {
     selectDiag.value = 10;
 
     calcSections[1].classList.remove('disabled');
-    calcSections[2].classList.remove('disabled');
-    calcSections[3].classList.remove('disabled');
-    calcSections[4].classList.remove('disabled');
-    calcSections[5].classList.remove('disabled');
   });
 
   inputWidth.addEventListener('change', () => {
@@ -208,15 +183,33 @@ jQuery(document).ready(function ($) {
     actWidth.value = inputWidth.value - 70;
     selectDiag.value = 10;
     calcSections[1].classList.remove('disabled');
-    calcSections[2].classList.remove('disabled');
-    calcSections[3].classList.remove('disabled');
-    calcSections[4].classList.remove('disabled');
-    calcSections[5].classList.remove('disabled');
   });
 
   //2 экран
- 
+  const typeImg = document.querySelector('.type-img');
+  const type = document.querySelectorAll('input[name="type"]');
   let deep = 70;
+  type.forEach((elem) => {
+    elem.addEventListener('click', () => {
+      typeImg.src = elem.dataset.src;
+      deep = elem.value;
+      calcSections[2].classList.remove('disabled');
+      calcSections[3].classList.remove('disabled');
+      calcSections[4].classList.remove('disabled');
+    });
+  });
+
+  
+
+  typeImg.addEventListener('click', () => {
+    $('.img-popup').fadeIn(200);
+    $('.img-popup img').attr('src', typeImg.src);
+  });
+
+  $('.img-popup').on('click', function () { 
+    $(this).fadeOut(200);
+  });
+  
 
   //3 экран
   let actTopActual = 35;
@@ -319,8 +312,8 @@ jQuery(document).ready(function ($) {
       $('.overlay').fadeOut(200);
       $('.calc-ral').fadeOut(200);
       if (ralBot.value != 0 && ralTop.value != 0 && ralFloor.value != 0) {
+        calcSections[5].classList.remove('disabled');
         calcSections[6].classList.remove('disabled');
-        calcSections[7].classList.remove('disabled');
       }
     });
   });
@@ -339,8 +332,8 @@ jQuery(document).ready(function ($) {
       $('.overlay').fadeOut(200);
       $('.calc-ral').fadeOut(200);
       if (ralBot.value != 0 && ralTop.value != 0 && ralFloor.value != 0) {
-        calcSections[6].classList.remove('disabled');
-        calcSections[7].classList.remove('disabled');
+        calcSections[5].classList.remove('disabled');
+    calcSections[6].classList.remove('disabled');
       }
     });
   });
@@ -360,8 +353,8 @@ jQuery(document).ready(function ($) {
       $('.overlay').fadeOut(200);
       $('.calc-ral').fadeOut(200);
       if (ralBot.value != 0 && ralTop.value != 0 && ralFloor.value != 0) {
-        calcSections[6].classList.remove('disabled');
-        calcSections[7].classList.remove('disabled');
+        calcSections[5].classList.remove('disabled');
+    calcSections[6].classList.remove('disabled');
       }
     });
   });
@@ -377,8 +370,8 @@ jQuery(document).ready(function ($) {
       ralTop.classList.remove('disabled');
       ralFloor.classList.remove('disabled');
     }
+    calcSections[5].classList.remove('disabled');
     calcSections[6].classList.remove('disabled');
-        calcSections[7].classList.remove('disabled');
 
   });
 
@@ -388,18 +381,6 @@ jQuery(document).ready(function ($) {
         dopDiod = document.querySelector('#diod'),
         dopSecur = document.querySelector('#secur-no'),
         dopCompl = document.querySelector('#compl-no');
-  const regDoVal = document.querySelector('.reg-do-val'),
-        regOtVal = document.querySelector('.reg-ot-val');
-
-  regHeightInput.addEventListener('change', () => {
-    if (regHeightInput.value == 'Без регулировки') {
-      regDoVal.classList.add('disabled');
-      regOtVal.classList.add('disabled');
-    } else {
-      regDoVal.classList.remove('disabled');
-      regOtVal.classList.remove('disabled');
-    }
-  })
 
   //6 экран
   let validation = 4;
@@ -469,11 +450,6 @@ jQuery(document).ready(function ($) {
         resPriceOnce = document.querySelector('.res-price-once'),
         resPriceAll = document.querySelector('.res-price-all');
 
-  const regStand = document.querySelector('.reg-stand'),
-        regG = document.querySelector('.reg-g'),
-        regHeight = document.querySelector('.reg-height'),
-        regOt = document.querySelector('.reg-ot'),
-        regDo = document.querySelector('.reg-do');
 
 
   //Подсчет
@@ -490,25 +466,13 @@ jQuery(document).ready(function ($) {
     resActTop.textContent = actTop.value;
     resActBot.textContent = Math.round(inputHeight.value - actHeight.value - actTop.value);
     
-    colHeight.textContent = colHeightInput.value;
-    colWidth.textContent = colWidthtInput.value;
-    colDeep.textContent = colDeeptInput.value;
+    
+
     osnHeight.textContent = osnHeightInput.value;
     osnWidth.textContent = osnWidthtInput.value;
     osnDeep.textContent = osnDeepInput.value;
-    
-    regStand.textContent = regStandInput.value;
-    regG.textContent = regGInput.value;
-    regHeight.textContent = regHeightInput.value;
-    
 
-    if (regHeightInput.value == 'Без регулировки') {
-      regOt.textContent = '-';
-      regDo.textContent = '-';
-    } else {
-      regOt.textContent = regOtInput.value;
-      regDo.textContent = regDoInput.value;
-    }
+    
 
     const optionsInputs = document.querySelectorAll('.options-wrap input');
 
@@ -521,7 +485,9 @@ jQuery(document).ready(function ($) {
     console.log(optionsInputs)
     if (ralNone.checked) {
       resRalTop.textContent = 'Нет';
-    resRalBot.textContent = 'Нет';
+      resRalBot.textContent = 'Нет';
+      resRalFloor.textContent = 'Нет';
+
     } else {
       resRalTop.textContent = ralTop.value;
       resRalBot.textContent = ralBot.value;
@@ -550,25 +516,39 @@ jQuery(document).ready(function ($) {
 
   const calcStart = () => {
     //Вневшние габариты (расчет профиля)
-    const gabarity = Math.round((+inputWidth.value * 2 + +inputHeight.value * 2) / 1000 * 300 /*11 300 берется из погонного метра*/);
+    const gabarity = Math.round((+inputWidth.value * 2 + +inputHeight.value * 2) / 1000 * 250 /*11 300 берется из погонного метра*/);
 
-    const fix = 400 + 2700; //11 Уголок *4 + Резка
+    const fix = 800 + 1500; //11 Уголок *4 + Резка
 
     const rezOuter = Math.round(
-      +inputWidth.value * +inputHeight.value / 10000 * 20 /*11 10 - резка лицевая */
+      +inputWidth.value * +inputHeight.value / 10000 * 15 /*11 10 - резка лицевая */
     );
 
     const rezInner = Math.round(
-      +inputWidth.value * +inputHeight.value / 10000 * 30 /*11 10 - резка внутренняя */
+      +inputWidth.value * +inputHeight.value / 10000 * 15 /*11 10 - резка внутренняя */
     );
 
     const kron = Math.round(
-     (+inputHeight.value * 0.3) * 2
+     (+inputHeight.value * 0.2) * 2
     );
 
     const E = Math.round(
-     4 * 15 //Цена кронштейна
+     8 * 16 //Цена кронштейна
     );
+
+    let typePlate;
+
+    if (deep == 70) {
+      typePlate = 300;
+    } else if (deep == 100) {
+      typePlate = 1300;
+    } else if (deep == 140) {
+      typePlate = 1550;
+    } else if (deep == 180) {
+      typePlate = 1550;
+    }
+
+
 
     let pokraska;
 
@@ -578,10 +558,10 @@ jQuery(document).ready(function ($) {
       pokraska = Math.round(inputWidth.value * inputHeight.value / 10000 * 119);/*Значение цены покраски*/
     }
     result = Math.round(
-      +gabarity + +fix + +rezOuter + +rezInner + +kron + +E + + +pokraska
+      +gabarity + +fix + +rezOuter + +rezInner + +kron + +E + + +pokraska + +typePlate 
     );
     
-      result = +result + 700 + 6000 + 300;
+      result = +result + 300 + 450 + 300;
 
     resPriceOnce.textContent = +result + ' руб.';
     resPriceAll.textContent = +result * +resCountInput.value + ' руб.';
