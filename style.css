@@ -123,6 +123,14 @@ section, footer {
   padding-bottom: 50px;
 }
 
+.button.alt {
+  color: #ffffff;
+}
+
+.button.alt:hover {
+  color: #000;
+}
+
 .phone a, .adress a {
   transition: 0.3s;
 }
