@@ -232,46 +232,34 @@
 			flex-direction: column
 			align-items: center
 			position: relative
-			padding: 240px 25px 25px 25px
+			padding: 250px 25px 25px 25px
 			cursor: pointer
 			transition: 0.3s
 			margin-bottom: 50px
-			
-			&-active
-				&::after
-					background-image: url(img/icons/check-blue.svg)
-					background-repeat: no-repeat
-					background-size: 79%
-					background-position: center
-			&::after
-				position: absolute
-				content: ''
-				height: 25px
-				width: 25px
-				border-radius: 5px	
-				background-color: #F5F5F5
-				border: 1px solid #E3E3E3
-				right: 20px
-				top: 20px
+			.button
+				height: 50px	
+				width: 100%
+				max-width: calc(100% - 30px)
 			&:hover
 				transition: 0.3s
 				transform: scale(1.05)
 			h3
 				font-size: 18px
 				font-weight: 500
+				margin-bottom: 25px
 			img
 				position: absolute
 				left: 50%
 				transform: translateX(-50%)
-				bottom: 35px
+				bottom: 125px
 			&:nth-child(2)
 				img
 					max-width: 170px
-					bottom: 24px	
+					bottom: 114px	
 			&:nth-child(4)
 				img
 					max-width: 170px
-					bottom: 70px	
+					bottom: 160px	
 			.assets
 				position: absolute
 				bottom: -50px
