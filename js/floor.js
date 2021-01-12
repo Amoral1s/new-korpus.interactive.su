@@ -216,7 +216,7 @@ jQuery(document).ready(function ($) {
   let actLeftActual = 35;
   actWidth.addEventListener('change', () => {
     if (actWidth.value > inputWidth.value - 70) {
-      alert('Значение активной ширины экрана не может быть больше ширины корпуса (Ширина корпуса - 35мм)');
+      alert('Значение активной ширины экрана не может быть больше ширины корпуса (Ширина корпуса - 35мм). Нужно увеличить размер корпуса, либо уменьшить размеры активной области экрана.');
       actWidth.value = inputWidth.value - 70;
     } else {
       actLeft.value = Math.round((inputWidth.value - actWidth.value) / 2);
@@ -228,7 +228,7 @@ jQuery(document).ready(function ($) {
   
   actHeight.addEventListener('change', () => {
     if (actHeight.value > inputHeight.value - 70) {
-      alert('Значение активной высоты экрана не может быть больше высоты корпуса (Высота корпуса - 35мм)');
+      alert('Значение активной высоты экрана не может быть больше высоты корпуса (Высота корпуса - 35мм). Нужно увеличить размер корпуса, либо уменьшить размеры активной области экрана.');
       actHeight.value = inputHeight.value - 70;
     } else {
       actTop.value = Math.round((inputHeight.value - actHeight.value) / 2);
@@ -241,10 +241,10 @@ jQuery(document).ready(function ($) {
 
   actTop.addEventListener('change', () => {
     if (actTopActual == 35 || actTop.value == 34) {
-      alert('Значение не может быть меньше 35мм!');
+      alert('Значение не может быть меньше 35мм! Нужно увеличить размер корпуса, либо уменьшить размеры активной области экрана.');
       actTop.value = 35;
     } else if (actTop.value > inputHeight.value - actHeight.value - 35) {
-      alert(`Значение не может быть больше ${inputHeight.value - actHeight.value - 35}мм!`);
+      alert(`Значение не может быть больше ${inputHeight.value - actHeight.value - 35}мм! Нужно увеличить размер корпуса, либо уменьшить размеры активной области экрана.`);
       actTop.value = inputHeight.value - actHeight.value - 35;
     } else {
       if (actTopActual > actTop.value) {
@@ -384,7 +384,7 @@ jQuery(document).ready(function ($) {
 
   //6 экран
   let validation = 4;
-  iOrg.addEventListener('change', () => {
+  iOrg.addEventListener('input', () => {
     if(iOrg.value.length > 0) {
       validation--;
     } 
@@ -393,7 +393,7 @@ jQuery(document).ready(function ($) {
     }
   });
 
-  iName.addEventListener('change', () => {
+  iName.addEventListener('input', () => {
     if(iName.value.length > 0) {
       validation--;
     }
@@ -402,7 +402,7 @@ jQuery(document).ready(function ($) {
     }
   });
 
-  iPhone.addEventListener('change', () => {
+  iPhone.addEventListener('input', () => {
     if(iPhone.value.length > 0) {
       validation--;
     }
@@ -411,7 +411,7 @@ jQuery(document).ready(function ($) {
     }
   });
 
-  iEmail.addEventListener('change', () => {
+  iEmail.addEventListener('input', () => {
     if(iEmail.value.length > 0) {
       validation--;
     }

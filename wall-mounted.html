@@ -41,11 +41,9 @@
   <section class="constructor constructor-page" id="top">
     <div class="container">
       <h2 class="title">
-        Тип устройства
+        Настенный
       </h2>
-      <p class="subtitle">
-        Выберите тип корпуса
-      </p>
+      
       <div class="constructor-wrap">
         <a href="https://amoral1s.github.io/new-korpus.interactive.su/wall-mounted.html" class="constructor-wrap-item  constructor-wrap-item-active" data-src="/wall-mounted">
           <img src="img/assets/1.png" alt="Настенный">
@@ -63,11 +61,27 @@
         <a href="https://amoral1s.github.io/new-korpus.interactive.su/touch-screen.html" class="constructor-wrap-item" data-src="/touch-screen">
           <img src="img/assets/2.png" alt="Сенсорный стол">
           <h3>Сенсорный стол</h3>
+          <div class="assets disabled">
+            <div class="assets-d">
+              3D
+            </div>
+            <div class="assets-d wall-video" data-src="http://korpus.interactive.su/wp-content/themes/calc/img/1.mp4">
+              <img src="img/icons/play-blue.svg" alt="play">
+            </div>
+          </div>
         </a>
         <!-- /.constructor-wrap-item -->
         <a href="https://amoral1s.github.io/new-korpus.interactive.su/floor-mounted.html" class="constructor-wrap-item" data-src="/floor-mounted">
           <img src="img/assets/3.png" alt="Напольный">
           <h3>Напольный</h3>
+          <div class="assets disabled">
+            <div class="assets-d">
+              3D
+            </div>
+            <div class="assets-d wall-video" data-src="http://korpus.interactive.su/wp-content/themes/calc/img/1.mp4">
+              <img src="img/icons/play-blue.svg" alt="play">
+            </div>
+          </div>
         </a>
         <!-- /.constructor-wrap-item -->
         <a href="https://amoral1s.github.io/new-korpus.interactive.su/tz.html"  class="constructor-wrap-item" data-src="/individual ">
@@ -122,7 +136,7 @@
               </div>
             </div>
             <div class="calc-row-column">
-              <p>Ширина, мм</p>
+              <p>Длина, мм</p>
               <div class="calc-row-numbers__input">
                 <div class="minus"></div>
                 <input type="number" min="100" value="100" id="input-width">
@@ -157,7 +171,7 @@
       <div class="calc-wrap">
         <div class="calc-wrap-left">
           <div class="calc-row">
-            <input name="type" data-src="img/calc/type-wall/1.jpg" value="70" id="type-one" type="radio">
+            <input name="type" data-src="img/calc/type-wall/1.jpg" value="70" id="type-one" type="radio" checked>
             <label for="type-one">
               <b>70мм</b>
               <p>
@@ -172,7 +186,7 @@
             <label for="type-two">
               <b>125мм</b>
               <p>
-                Узкий отсек блока электроники с дверцей Используется под форм фактор Thin-ITX
+                Узкий отсек блока электроники с дверцей. Используется под форм фактор Thin-ITX
               </p>
             </label>
           </div>
@@ -182,7 +196,7 @@
             <label for="type-three">
               <b>177мм</b>
               <p>
-                Широкий отсек блока электроники с дверцей
+                Широкий отсек блока электроники с дверцей.
                 Используется под форм фактор ATX
               </p>
             </label>
@@ -220,7 +234,7 @@
               </div>
             </div>
             <div class="calc-row-column">
-              <p>Ширина, мм</p>
+              <p>Длина, мм</p>
               <div class="calc-row-numbers__input">
                 <div class="minus"></div>
                 <input type="number" id="act-width" min="100" value="389">
@@ -339,8 +353,7 @@
         <input id="secur"  type="checkbox">
         <label for="secur">Защита заказа</label>
         <div class="toggle-q">?<b class="q-text">
-          Мы гарантируем что по данному размеру корпуса заказ 
-          будет не возможен для сторонних клиентов
+          Мы гарантируем что корпусы для вашего проекта не смогут приобрести другие.
         </b></div>
         
       </div>
@@ -367,7 +380,7 @@
       <div class="calc-form">
         <div class="calc-form-left">
           <label for="">Название организации</label>
-          <input class="i-org" type="text" placeholder="ООО Огранизация">
+          <input class="i-org" type="text" placeholder="ООО / ИП">
           
           <label for="">Контактное лицо</label>
           <input class="i-name" type="text" placeholder="Ваше имя">
