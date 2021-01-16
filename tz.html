@@ -260,21 +260,14 @@
             </div>
           </div>
           <!-- /.calc-row -->
-          <div class="calc-row">
-            <div class="calc-row-column">
-              <p>Материал корпуса</p>
-              <div for="all-height" class="select">
-                <select name="" id="all-height">
-                  <option value="Сталь">Сталь</option>
-                  <option value="Алюминий">Алюминий</option>
-                  <option value="МДФ">МДФ</option>
-                  <option value="Стекло">Стекло</option>
-                  <option value="Камень">Камень</option>
-                </select>
-              </div>
+          <div class="calc-row calc-row-column" style="width: 100%">
+            <p>Материал корпуса</p>
+            <div class="ral ral-top select" style="width: 100%; max-width: 360px">
+              <input type="text" id="material" placeholder="Материал (0)">
             </div>
           </div>
           <!-- /.calc-row -->
+          
           <div class="calc-row">
             <div class="calc-row-column">
               <p>Высота, мм</p>
@@ -313,8 +306,9 @@
             </div>
           </div>
           <!-- /.calc-row -->
-          <p>Выберите опции</p>
-          <div class="calc-row" style="width: 100%">
+          
+          <div class="calc-row calc-row-column" style="width: 100%">
+            <p>Выберите опции</p>
             <div class="ral ral-top select" style="width: 100%; max-width: 360px">
               <input type="text" id="options" placeholder="Опции (0)">
             </div>
@@ -752,7 +746,7 @@
     </div>
   </div>
 
-  <div class="options">
+  <div class="options options-popup">
     <div class="close-opt">&times;</div>
     <div class="options-wrap">
       <div class="calc-row">
@@ -827,6 +821,36 @@
       <!-- /.calc-row -->
       
       
+    </div>
+  </div>
+  <div class="options material-popup">
+    <div class="close-opt">&times;</div>
+    <div class="options-wrap">
+      <div class="calc-row">
+        <input id="stal" value="Сталь"  type="checkbox">
+        <label for="stal">Сталь</label>
+      </div>
+      <!-- /.calc-row -->
+      <div class="calc-row">
+        <input id="al"  type="checkbox" value="Алюминий">
+        <label for="al">Алюминий</label>
+      </div>
+      <!-- /.calc-row -->
+      <div class="calc-row">
+        <input id="mdf"  type="checkbox" value="МДФ">
+        <label for="mdf">МДФ</label>
+      </div>
+      <!-- /.calc-row -->
+      <div class="calc-row">
+        <input id="gl"  type="checkbox" value="Стекло">
+        <label for="gl">Стекло</label>
+      </div>
+      <!-- /.calc-row -->
+      <div class="calc-row">
+        <input id="sto"  type="checkbox" value="Камень">
+        <label for="sto">Камень</label>
+      </div>
+      <!-- /.calc-row -->
     </div>
   </div>
 
