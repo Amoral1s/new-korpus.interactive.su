@@ -98,7 +98,7 @@ jQuery(document).ready(function ($) {
       inputWidth.value = 512;
 
       textHeight.textContent = 1790;
-      textWidth.textContent = 459;
+      textWidth.textContent = 512;
 
     } else if (selectDiag.value == 2) {
       inputHeight.value = 1790;
@@ -107,28 +107,36 @@ jQuery(document).ready(function ($) {
       textHeight.textContent = 1790;
       textWidth.textContent = 665;
 
+    } else if (selectDiag.value == 4) {
     } else if (selectDiag.value == 3) {
+      inputHeight.value = 1790;
+      inputWidth.value = 665;
+      
+      textHeight.textContent = 1790;
+      textWidth.textContent = 665;
+
+    } else if (selectDiag.value == 4) {
       inputHeight.value = 1850;
       inputWidth.value = 750;
       
       textHeight.textContent = 1850;
       textWidth.textContent = 750;
 
-    } else if (selectDiag.value == 4) {
+    } else if (selectDiag.value == 5) {
       inputHeight.value = 1850;
       inputWidth.value = 820;
       
       textHeight.textContent = 1850;
       textWidth.textContent = 820;
 
-    } else if (selectDiag.value == 5) {
+    } else if (selectDiag.value == 6) {
       inputHeight.value = 2000;
       inputWidth.value = 910;
       
       textHeight.textContent = 2000;
       textWidth.textContent = 910;
 
-    } else if (selectDiag.value == 6) {
+    } else if (selectDiag.value == 7) {
       inputHeight.value = 100;
       inputWidth.value = 100;
       
