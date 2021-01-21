@@ -228,10 +228,10 @@ jQuery(document).ready(function ($) {
   actLeft.addEventListener('change', () => {
     console.log(inputWidth.value - actWidth.value - 35)
     if (actLeftActual == 35 || actLeft.value == 34) {
-      alert('Значение не может быть меньше 35мм!');
+      alert('Значение не может быть меньше 35мм! Нужно увеличить размер корпуса, либо уменьшить размеры активной области экрана.');
       actLeft.value = 35;
     } else if (actLeft.value > inputWidth.value - actWidth.value - 35) {
-      alert(`Значение не может быть больше ${inputWidth.value - actWidth.value - 35}мм!`);
+      alert(`Значение не может быть больше ${inputWidth.value - actWidth.value - 35}мм! Нужно увеличить размер корпуса, либо уменьшить размеры активной области экрана.`);
       actLeft.value = inputWidth.value - actWidth.value - 35;
     } else {
       if (actLeftActual > actLeft.value) {

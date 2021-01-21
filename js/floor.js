@@ -94,69 +94,41 @@ jQuery(document).ready(function ($) {
 
   selectDiag.addEventListener('change', () => {
     if (selectDiag.value == 1) {
-      inputHeight.value = 447;
-      inputWidth.value = 459;
+      inputHeight.value = 1790;
+      inputWidth.value = 512;
 
-      textHeight.textContent = 447;
+      textHeight.textContent = 1790;
       textWidth.textContent = 459;
 
     } else if (selectDiag.value == 2) {
-      inputHeight.value = 445;
-      inputWidth.value = 625;
+      inputHeight.value = 1790;
+      inputWidth.value = 665;
       
-      textHeight.textContent = 445;
-      textWidth.textContent = 625;
+      textHeight.textContent = 1790;
+      textWidth.textContent = 665;
 
     } else if (selectDiag.value == 3) {
-      inputHeight.value = 414;
-      inputWidth.value = 644;
+      inputHeight.value = 1850;
+      inputWidth.value = 750;
       
-      textHeight.textContent = 414;
-      textWidth.textContent = 644;
+      textHeight.textContent = 1850;
+      textWidth.textContent = 750;
 
     } else if (selectDiag.value == 4) {
-      inputHeight.value = 368;
-      inputWidth.value = 630;
+      inputHeight.value = 1850;
+      inputWidth.value = 820;
       
-      textHeight.textContent = 368;
-      textWidth.textContent = 630;
+      textHeight.textContent = 1850;
+      textWidth.textContent = 820;
 
     } else if (selectDiag.value == 5) {
-      inputHeight.value = 514;
-      inputWidth.value = 815;
+      inputHeight.value = 2000;
+      inputWidth.value = 910;
       
-      textHeight.textContent = 514;
-      textWidth.textContent = 815;
+      textHeight.textContent = 2000;
+      textWidth.textContent = 910;
 
     } else if (selectDiag.value == 6) {
-      inputHeight.value = 665;
-      inputWidth.value = 1075;
-      
-      textHeight.textContent = 665;
-      textWidth.textContent = 1075;
-
-    } else if (selectDiag.value == 7) {
-      inputHeight.value = 750;
-      inputWidth.value = 1230;
-      
-      textHeight.textContent = 750;
-      textWidth.textContent = 1230;
-
-    } else if (selectDiag.value == 8) {
-      inputHeight.value = 820;
-      inputWidth.value = 1338;
-      
-      textHeight.textContent = 820;
-      textWidth.textContent = 1338;
-
-    } else if (selectDiag.value == 9) {
-      inputHeight.value = 940;
-      inputWidth.value = 1552;
-      
-      textHeight.textContent = 940;
-      textWidth.textContent = 1552;
-
-    } else if (selectDiag.value == 10) {
       inputHeight.value = 100;
       inputWidth.value = 100;
       
@@ -268,10 +240,10 @@ jQuery(document).ready(function ($) {
   actLeft.addEventListener('change', () => {
     console.log(inputWidth.value - actWidth.value - 35)
     if (actLeftActual == 35 || actLeft.value == 34) {
-      alert('Значение не может быть меньше 35мм!');
+      alert('Значение активной ширины экрана не может быть больше ширины корпуса (Ширина корпуса - 35мм). Нужно увеличить размер корпуса, либо уменьшить размеры активной области экрана.');
       actLeft.value = 35;
     } else if (actLeft.value > inputWidth.value - actWidth.value - 35) {
-      alert(`Значение не может быть больше ${inputWidth.value - actWidth.value - 35}мм!`);
+      alert(`Значение не может быть больше ${inputWidth.value - actWidth.value - 35}мм! Нужно увеличить размер корпуса, либо уменьшить размеры активной области экрана.`);
       actLeft.value = inputWidth.value - actWidth.value - 35;
     } else {
       if (actLeftActual > actLeft.value) {
