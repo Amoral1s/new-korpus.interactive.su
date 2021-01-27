@@ -1150,8 +1150,6 @@
 			border-radius: 5px
 			top: 15px
 			right: 15px
-		img
-			bottom: 60px
 	.constructor-wrap-item-active
 		&::before
 			position: absolute
@@ -1166,8 +1164,22 @@
 			background-size: contain
 			background-position: center
 			z-index: 5
-	.constructor-wrap-item:nth-child(4) img
-		bottom: 95px
+h3.gift
+	position: relative
+	padding-left: 50px
+	&:after 
+    position: absolute
+    content: ''
+    left: 0
+    top: 50%
+    transform: translateY(-50%)
+    height: 35px
+    width: 35px
+    background-image: url(img/icons/gift.svg)
+    background-repeat: no-repeat
+    background-size: contain
+    background-position: center
+
 
 
 

@@ -1,5 +1,10 @@
 jQuery(document).ready(function ($) {
-
+  $('.wall-video').on('click', function() {
+    $('.popup-gif .content video').attr('src', $(this).attr('data-src'));
+    
+    $('.overlay').fadeIn(200);
+    $('.popup-gif').fadeIn(200);
+  });
   
   
   //Валидаци

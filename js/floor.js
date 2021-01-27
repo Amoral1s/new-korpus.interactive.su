@@ -1,6 +1,11 @@
 jQuery(document).ready(function ($) {
   const opt = document.querySelector('#options');
-
+  $('.wall-video').on('click', function() {
+    $('.popup-gif .content video').attr('src', $(this).attr('data-src'));
+    
+    $('.overlay').fadeIn(200);
+    $('.popup-gif').fadeIn(200);
+  });
 
   
 

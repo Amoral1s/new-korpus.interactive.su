@@ -1694,6 +1694,10 @@ section, footer {
   right: 15px;
 }
 
+.constructor-page.constructor .constructor-wrap-item img {
+  bottom: 60px;
+}
+
 .constructor-page.constructor .constructor-wrap-item-active::before {
   position: absolute;
   content: '';
@@ -1709,23 +1713,8 @@ section, footer {
   z-index: 5;
 }
 
-h3.gift {
-  position: relative;
-  padding-left: 50px;
-}
-
-h3.gift:after {
-  position: absolute;
-  content: '';
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 35px;
-  width: 35px;
-  background-image: url(img/icons/gift.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+.constructor-page.constructor .constructor-wrap-item:nth-child(4) img {
+  bottom: 95px;
 }
 
 @media (max-width: 1199px) {
