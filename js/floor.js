@@ -79,6 +79,14 @@ jQuery(document).ready(function ($) {
         iPhone = document.querySelector('.i-phone'),
         iEmail = document.querySelector('.i-email'),
         calculadetBtn = document.querySelector('.calculated');
+
+  osnHeightInput.addEventListener('change', () => {
+    if (osnHeightInput.value >= 10) {
+      osnHeightInput.value = 10;
+    } else if (osnHeightInput.value <= 3) {
+      osnHeightInput.value = 3;
+    }
+  });
   //1 экран
   if (plus) {
     plus.forEach((elem) => {

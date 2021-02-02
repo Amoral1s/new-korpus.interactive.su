@@ -125,15 +125,15 @@
               <div for="all-height" class="select">
                 <select name="" id="all-height">
                   <option value="0" selected disabled><b>Выберите диагональ</option>
-                  <option value="1"><b>19"</b> 447х459мм</option>
-                  <option value="2"><b>21.5"</b> 445x625</option>
-                  <option value="3"><b>23.8"</b> 414x644</option>
-                  <option value="4"><b>27"</b> 368x630</option>
-                  <option value="5"><b>32"</b> 514x815</option>
-                  <option value="6"><b>43"</b> 665x1075</option>
-                  <option value="7"><b>50"</b> 750x1230</option>
-                  <option value="8"><b>55"</b> 820x1338</option>
-                  <option value="9"><b>65"</b> 940x1552</option>
+                  <option value="1"><b>19"</b> (447х459 мм)</option>
+                  <option value="2"><b>21.5"</b> (445x625 мм)</option>
+                  <option value="3"><b>23.8"</b> (414x644 мм)</option>
+                  <option value="4"><b>27"</b> (368x630 мм)</option>
+                  <option value="5"><b>32"</b> (514x815 мм)</option>
+                  <option value="6"><b>43"</b> (665x1075 мм)</option>
+                  <option value="7"><b>50"</b> (750x1230 мм)</option>
+                  <option value="8"><b>55"</b> (820x1338 мм)</option>
+                  <option value="9"><b>65"</b> (940x1552 мм)</option>
                   <option value="10"><b></b> Другая</option>
                 </select>
               </div>
@@ -149,7 +149,7 @@
               </div>
             </div>
             <div class="calc-row-column">
-              <p>Длина, мм</p>
+              <p>Ширина, мм</p>
               <div class="calc-row-numbers__input">
                 <div class="minus"></div>
                 <input type="number" min="100" value="100" id="input-width">
@@ -247,7 +247,7 @@
               </div>
             </div>
             <div class="calc-row-column">
-              <p>Длина, мм</p>
+              <p>Ширина, мм</p>
               <div class="calc-row-numbers__input">
                 <div class="minus"></div>
                 <input type="number" id="act-width" min="100" value="389">
@@ -300,7 +300,7 @@
           <p>Рама и лицевая часть</p>
           <div class="calc-row">
             <div class="ral ral-top select">
-              <input type="text" id="ral-top" placeholder="RAL 0000">
+              <input type="text" id="ral-top" placeholder="RAL 0000" autocomplete="off"  readonly onfocus="this.removeAttribute('readonly')">
             </div>
           </div>
           <!-- /.calc-row -->
@@ -308,7 +308,7 @@
 
           <div class="calc-row">
             <div class="ral ral-bot select">
-              <input type="text" id="ral-bot" placeholder="RAL 0000">
+              <input type="text" id="ral-bot" placeholder="RAL 0000" autocomplete="off"  readonly onfocus="this.removeAttribute('readonly')">
             </div>
           </div>
           <!-- /.calc-row -->
@@ -431,12 +431,12 @@
         <div class="calc-popup-wrap-item">
           <h3>Корпус</h3>
           <div class="result">
-            <p>Длина</p>
+            <p>Ширина</p>
             <b class="res-width">000</b>
           </div>
           <!-- /.result -->
           <div class="result">
-            <p>Ширина</p>
+            <p>Высота</p>
             <b class="res-height">000</b>
           </div>
           <!-- /.result -->
@@ -484,7 +484,7 @@
                     <option value="3">20-30 дней</option>
                     <option value="2">10-20 дней</option>
                     <option value="1">5-10 дней</option>
-                    <option value="3">Бронь</option>
+                    <option value="3">Не знаю сроков</option>
                   </select>
                 </div>
               </div>
@@ -519,12 +519,12 @@
         <div class="calc-popup-wrap-item">
           <h3>Активная область экрана</h3>
           <div class="result">
-            <p>Длина</p>
+            <p>Ширина</p>
             <b class="res-act-width">000</b>
           </div>
           <!-- /.result -->
           <div class="result">
-            <p>Ширина</p>
+            <p>Высота</p>
             <b class="res-act-height">000</b>
           </div>
           <!-- /.result -->

@@ -125,12 +125,12 @@
               <div for="all-height" class="select">
                 <select name="" id="all-height">
                   <option value="0" selected disabled><b>Выберите диагональ</option>
-                  <option value="1"><b>27"</b> 1790х512</option>
-                  <option value="2"><b>32"</b> 1790х512</option>
-                  <option value="3"><b>43"</b> 1790х665</option>
-                  <option value="4"><b>50"</b> 1850х750</option>
-                  <option value="5"><b>55"</b> 1850х820</option>
-                  <option value="6"><b>65"</b> 2000х910</option>
+                  <option value="1"><b>27"</b> (1790х512 мм)</option>
+                  <option value="2"><b>32"</b> (1790х512 мм)</option>
+                  <option value="3"><b>43"</b> (1790х665 мм)</option>
+                  <option value="4"><b>50"</b> (1850х750 мм)</option>
+                  <option value="5"><b>55"</b> (1850х820 мм)</option>
+                  <option value="6"><b>65"</b> (2000х910 мм)</option>
                   <option value="7"><b></b> Другая</option>
                 </select>
               </div>
@@ -211,8 +211,8 @@
           </div>
           <!-- /.calc-row -->
           <div class="calc-row">
-            <input name="type" data-src="img/calc/type-floor/4.jpg" value="180"  id="type-three" type="radio">
-            <label for="type-three">
+            <input name="type" data-src="img/calc/type-floor/4.jpg" value="180"  id="type-four" type="radio">
+            <label for="type-four">
               <b>180мм</b>
               <p>
                 Отсек электроники (ИБП, АТХ, Принтер)
@@ -259,7 +259,7 @@
               </div>
             </div>
             <div class="calc-row-column">
-              <p>Длина, мм</p>
+              <p>Ширина, мм</p>
               <div class="calc-row-numbers__input">
                 <div class="minus"></div>
                 <input type="number" id="act-width" min="100" value="389">
@@ -314,12 +314,12 @@
               <p>Высота, мм</p>
               <div class="calc-row-numbers__input">
                 <div class="minus"></div>
-                <input type="number" id="osn-height" min="100" value="300">
+                <input type="number" id="osn-height" min="3" max="10" value="10">
                 <div class="plus"></div>
               </div>
             </div>
             <div class="calc-row-column">
-              <p>Длина, мм</p>
+              <p>Ширина, мм</p>
               <div class="calc-row-numbers__input">
                 <div class="minus"></div>
                 <input type="number" id="osn-width" min="100" value="300">
@@ -361,7 +361,7 @@
           <p>Рама и лицевая часть</p>
           <div class="calc-row">
             <div class="ral ral-top select">
-              <input type="text" id="ral-top" placeholder="RAL 0000">
+              <input type="text" id="ral-top" placeholder="RAL 0000" autocomplete="off"  readonly onfocus="this.removeAttribute('readonly')">
             </div>
           </div>
           <!-- /.calc-row -->
@@ -369,7 +369,7 @@
 
           <div class="calc-row">
             <div class="ral ral-bot select">
-              <input type="text" id="ral-bot" placeholder="RAL 0000">
+              <input type="text" id="ral-bot" placeholder="RAL 0000" autocomplete="off"  readonly onfocus="this.removeAttribute('readonly')">
             </div>
           </div>
           <!-- /.calc-row -->
@@ -377,7 +377,7 @@
 
           <div class="calc-row">
             <div class="ral ral-bot select">
-              <input type="text" id="ral-floor" placeholder="RAL 0000">
+              <input type="text" id="ral-floor" placeholder="RAL 0000" autocomplete="off"  readonly onfocus="this.removeAttribute('readonly')">
             </div>
           </div>
           <!-- /.calc-row -->
@@ -408,7 +408,10 @@
             <p>Выберите опции</p>
             <div class="calc-row" style="width: 100%">
               <div class="ral ral-top select" style="width: 100%; max-width: 360px">
-                <input type="text" id="options" placeholder="Опции (0)">
+                <div class="toggle-q">?<b class="q-text">
+                  Выберите тип оборудования, под которое необходимо подготовить вырезы, отверстия и крепления на корпусе. Если вы будете использовать свои комплектующие, необходимо предоставить чертёж с указанием всех размеров
+                </b></div>
+                <input type="text" id="options" placeholder="Опции (0)" autocomplete="off"  readonly onfocus="this.removeAttribute('readonly')">
               </div>
             </div>
           </div>
@@ -485,12 +488,12 @@
         <div class="calc-popup-wrap-item">
           <h3>Корпус</h3>
           <div class="result">
-            <p>Длина</p>
+            <p>Ширина</p>
             <b class="res-width">000</b>
           </div>
           <!-- /.result -->
           <div class="result">
-            <p>Ширина</p>
+            <p>Высота</p>
             <b class="res-height">000</b>
           </div>
           <!-- /.result -->
@@ -559,7 +562,7 @@
                     <option value="3">20-30 дней</option>
                     <option value="2">10-20 дней</option>
                     <option value="1">5-10 дней</option>
-                    <option value="3">Бронь</option>
+                    <option value="3">Не знаю сроков</option>
                   </select>
                 </div>
               </div>
@@ -593,7 +596,7 @@
         <div class="calc-popup-wrap-item">
           <h3>Активная область экрана</h3>
           <div class="result">
-            <p>Длина</p>
+            <p>Ширина</p>
             <b class="res-act-width">000</b>
           </div>
           <!-- /.result -->

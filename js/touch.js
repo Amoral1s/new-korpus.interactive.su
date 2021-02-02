@@ -74,6 +74,7 @@ jQuery(document).ready(function ($) {
   //Элементы 5 экрана (угол)
   const regStandInput = document.querySelector('#reg-stand'),
         regGInput = document.querySelector('#reg-g'),
+        regGInputDo = document.querySelector('#reg-g-do'),
         regHeightInput = document.querySelector('#reg-height'),
         regOtInput = document.querySelector('#reg-ot'),
         regDoInput = document.querySelector('#reg-do');
@@ -476,6 +477,7 @@ jQuery(document).ready(function ($) {
 
   const regStand = document.querySelector('.reg-stand'),
         regG = document.querySelector('.reg-g'),
+        regGDo = document.querySelector('.reg-g-do'),
         regHeight = document.querySelector('.reg-height'),
         regOt = document.querySelector('.reg-ot'),
         regDo = document.querySelector('.reg-do');
@@ -504,6 +506,7 @@ jQuery(document).ready(function ($) {
     
     regStand.textContent = regStandInput.value;
     regG.textContent = regGInput.value;
+    regGDo.textContent = regGInputDo.value;
     regHeight.textContent = regHeightInput.value;
     
 

@@ -138,7 +138,7 @@
             <div class="calc-row-column">
               <p>Загрузите техническое задание</p>
               <div for="all-height" class="">
-                <input type="file">
+                <input type="file" multiple>
               </div>
             </div>
           </div>
@@ -160,7 +160,7 @@
                       <option value="3">20-30 дней</option>
                       <option value="2">10-20 дней</option>
                       <option value="1">5-10 дней</option>
-                      <option value="3">Бронь</option>
+                      <option value="3">Не знаю сроков</option>
                     </select>
                   </div>
                 </div>
@@ -284,6 +284,9 @@
                   <option value="1">Настенный</option>
                   <option value="2">Сенсорный стол</option>
                   <option value="3">Напольный</option>
+                  <option value="4">Модульный</option>
+                  <option value="5">Платежный</option>
+                  <option value="6">Электронная очередь</option>
                 </select>
               </div>
             </div>
@@ -292,7 +295,7 @@
           <div class="calc-row calc-row-column" style="width: 100%">
             <p>Материал корпуса</p>
             <div class="ral ral-top select" style="width: 100%; max-width: 360px">
-              <input type="text" id="material" placeholder="Материал (0)">
+              <input type="text" id="material" placeholder="Материал (0)" autocomplete="off"  readonly onfocus="this.removeAttribute('readonly')">
             </div>
           </div>
           <!-- /.calc-row -->
@@ -307,7 +310,7 @@
               </div>
             </div>
             <div class="calc-row-column">
-              <p>Длина, мм</p>
+              <p>Ширина, мм</p>
               <div class="calc-row-numbers__input">
                 <div class="minus"></div>
                 <input type="number" min="10" value="100" id="input-width">
@@ -339,7 +342,10 @@
           <div class="calc-row calc-row-column" style="width: 100%">
             <p>Выберите опции</p>
             <div class="ral ral-top select" style="width: 100%; max-width: 360px">
-              <input type="text" id="options" placeholder="Опции (0)">
+              <div class="toggle-q">?<b class="q-text">
+                Выберите тип оборудования, под которое необходимо подготовить вырезы, отверстия и крепления на корпусе. Если вы будете использовать свои комплектующие, необходимо предоставить чертёж с указанием всех размеров
+              </b></div>
+              <input type="text" id="options" placeholder="Опции (0)" autocomplete="off"  readonly onfocus="this.removeAttribute('readonly')">
             </div>
           </div>
           <!-- /.calc-row -->
@@ -369,14 +375,14 @@
             <div class="calc-row-column">
               <p>Загрузите техническое задание</p>
               <div for="all-height" class="">
-                <input type="file">
+                <input type="file" multiple>
               </div>
             </div>
           </div>
           <p>Цвет корпуса</p>
           <div class="calc-row" style="width: 100%">
             <div class="ral ral-top select" style="width: 100%; max-width: 360px">
-              <input type="text" id="ral-top" placeholder="RAL 0000">
+              <input type="text" id="ral-top" placeholder="RAL 0000" autocomplete="off"  readonly onfocus="this.removeAttribute('readonly')">
             </div>
           </div>
           <!-- /.calc-row -->
@@ -399,7 +405,7 @@
                       <option value="3">20-30 дней</option>
                       <option value="2">10-20 дней</option>
                       <option value="1">5-10 дней</option>
-                      <option value="3">Бронь</option>
+                      <option value="3">Не знаю сроков</option>
                     </select>
                   </div>
                 </div>

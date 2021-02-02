@@ -53,10 +53,10 @@ jQuery(document).ready(function ($) {
       
       $('.overlay').fadeOut(200);
       $('.calc-ral').fadeOut(200);
-      if (ralBot.value != 0 && ralTop.value != 0) {
+      /* if (ralBot.value != 0 || ralTop.value != 0) {
         calcSections[4].classList.remove('disabled');
         calcSections[5].classList.remove('disabled');
-      }
+      } */
     });
   });
 

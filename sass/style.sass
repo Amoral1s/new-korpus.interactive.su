@@ -1180,9 +1180,31 @@ h3.gift
     background-size: contain
     background-position: center
 
-
-
-
+.act-obl
+	&::after
+		position: absolute
+		content: 'Ширина'
+		font-size: 14px
+		font-weight: 400
+		bottom: 10px
+		left: 50%
+		transform: translateX(-50%)
+	&::before
+		position: absolute
+		content: 'Высота'
+		font-size: 14px
+		font-weight: 400
+		top: 50%
+		left: -5px
+		transform: translateY(-50%) rotate(90deg)
+.about
+	margin-top: -70px
+	.title
+		margin-bottom: 30px
+	p
+		margin-bottom: 20px
+		font-size: 18px
+		line-height: 38px
 
 
 
