@@ -43,7 +43,6 @@
       <h2 class="title">
         Сенсорный стол
       </h2>
-      
       <div class="constructor-wrap">
         <div class="constructor-wrap-item" data-src="https://amoral1s.github.io/new-korpus.interactive.su/wall-mounted.html">
           <img src="img/assets/1.png" alt="Настенный">
@@ -125,15 +124,15 @@
               <div for="all-height" class="select">
                 <select name="" id="all-height">
                   <option value="0" selected disabled><b>Выберите диагональ</option>
-                  <option value="1"><b>19"</b> (447х459 мм)</option>
-                  <option value="2"><b>21.5"</b> (445x625 мм)</option>
-                  <option value="3"><b>23.8"</b> (414x644 мм)</option>
-                  <option value="4"><b>27"</b> (368x630 мм)</option>
-                  <option value="5"><b>32"</b> (514x815 мм)</option>
-                  <option value="6"><b>43"</b> (665x1075 мм)</option>
-                  <option value="7"><b>50"</b> (750x1230 мм)</option>
-                  <option value="8"><b>55"</b> (820x1338 мм)</option>
-                  <option value="9"><b>65"</b> (940x1552 мм)</option>
+                  <option value="1"><b>19" -</b> (447х459 мм)</option>
+                  <option value="2"><b>21.5" -</b> (445x625 мм)</option>
+                  <option value="3"><b>23.8" -</b> (414x644 мм)</option>
+                  <option value="4"><b>27" -</b> (368x630 мм)</option>
+                  <option value="5"><b>32" -</b> (514x815 мм)</option>
+                  <option value="6"><b>43" -</b> (665x1075 мм)</option>
+                  <option value="7"><b>50" -</b> (750x1230 мм)</option>
+                  <option value="8"><b>55" -</b> (820x1338 мм)</option>
+                  <option value="9"><b>65" -</b> (940x1552 мм)</option>
                   <option value="10"><b></b> Другая</option>
                 </select>
               </div>
@@ -372,17 +371,17 @@
               <div class="calc-row" style="margin-top: 20px">
                 <div class="calc-row-column">
                   <p>От</p>
-                <div class="calc-row-numbers__input">
+                <div class="calc-row-numbers__input disabled">
                   <div class="minus"></div>
-                  <input type="number" id="reg-g" min="1" value="30">
+                  <input type="number" id="reg-g" class="reg-g-input" min="1" value="35">
                   <div class="plus"></div>
                 </div>
                 </div>
                 <div class="calc-row-column">
                   <p>До</p>
-                <div class="calc-row-numbers__input">
+                <div class="calc-row-numbers__input disabled">
                   <div class="minus"></div>
-                  <input type="number" id="reg-g-do" min="1" value="60">
+                  <input type="number" id="reg-g-do" class="reg-g-do-input" min="1" value="35">
                   <div class="plus"></div>
                 </div>
                 </div>
@@ -409,7 +408,7 @@
               <p>От, мм</p>
               <div class="calc-row-numbers__input reg-ot-val disabled">
                 <div class="minus"></div>
-                <input type="number" id="reg-ot" min="1" value="50">
+                <input type="number" id="reg-ot" min="1" value="0">
                 <div class="plus"></div>
               </div>
             </div>
@@ -417,7 +416,7 @@
               <p>До, мм</p>
               <div class="calc-row-numbers__input reg-do-val disabled">
                 <div class="minus"></div>
-                <input type="number" id="reg-do" min="1" value="100">
+                <input type="number" id="reg-do" class="reg-do-input" min="1" value="0">
                 <div class="plus"></div>
               </div>
             </div>

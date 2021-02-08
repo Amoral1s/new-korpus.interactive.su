@@ -566,10 +566,7 @@ jQuery(document).ready(function ($) {
     if (resCountInput.value <= 9) {
       resPriceAll.textContent = +result * +resCountInput.value + ' руб.';
       resPriceOnce.textContent = +result + ' руб.';
-    } /* else if (resCountInput.value >= 1 && resCountInput.value <= 9) {
-      resPriceAll.textContent = Math.round((+result * +resCountInput.value) / 100 * 97) + ' руб.';
-      resPriceOnce.textContent =  Math.round(+result / 100 * 97) + ' руб.';
-    } */ else if (resCountInput.value >= 10 && resCountInput.value <= 19) {
+    }  else if (resCountInput.value >= 10 && resCountInput.value <= 19) {
       resPriceAll.textContent = Math.round((+result * +resCountInput.value) / 100 * 95) + ' руб.';
       resPriceOnce.textContent =  Math.round(+result / 100 * 95) + ' руб.';
 
@@ -580,8 +577,24 @@ jQuery(document).ready(function ($) {
     } else if (resCountInput.value >= 40) {
       resPriceAll.textContent = Math.round((+result * +resCountInput.value) / 100 * 90) + ' руб.';
       resPriceOnce.textContent =  Math.round(+result / 100 * 90) + ' руб.';
-
     }
+
+    if (resTime.value == 1) {
+
+      resPriceAll.textContent = Math.round((+resPriceAll.textContent.replace(/\D+/g,"")) / 100 * 110) + ' руб.';
+      resPriceOnce.textContent = Math.round((+resPriceOnce.textContent.replace(/\D+/g,"")) / 100 * 110) + ' руб.';
+
+    } else if (resTime.value == 2) {
+
+      resPriceAll.textContent = Math.round((+resPriceAll.textContent.replace(/\D+/g,"")) / 100 * 105) + ' руб.';
+      resPriceOnce.textContent = Math.round((+resPriceOnce.textContent.replace(/\D+/g,"")) / 100 * 105) + ' руб.';
+
+    } else if (resTime.value == 3) {
+
+      resPriceAll.textContent = +resPriceAll.textContent.replace(/\D+/g,"") + ' руб.';
+      resPriceOnce.textContent = +resPriceOnce.textContent.replace(/\D+/g,"") + ' руб.';
+    }
+    
   });
 
   resTime.addEventListener('change', () => {
@@ -600,6 +613,24 @@ jQuery(document).ready(function ($) {
       resPriceAll.textContent = +result * +resCountInput.value + ' руб.';
       resPriceOnce.textContent = +result + ' руб.';
     }
+
+    if (resCountInput.value <= 9) {
+      resPriceAll.textContent = +resPriceAll.textContent.replace(/\D+/g,"") + ' руб.';
+      resPriceOnce.textContent = ++resPriceOnce.textContent.replace(/\D+/g,"") + ' руб.';
+    }  else if (resCountInput.value >= 10 && resCountInput.value <= 19) {
+      resPriceAll.textContent = Math.round((+resPriceAll.textContent.replace(/\D+/g,"")) / 100 * 95) + ' руб.';
+      resPriceOnce.textContent =  Math.round(++resPriceOnce.textContent.replace(/\D+/g,"") / 100 * 95) + ' руб.';
+
+    } else if (resCountInput.value >= 20 && resCountInput.value <= 39) {
+      resPriceAll.textContent = Math.round((+resPriceAll.textContent.replace(/\D+/g,"")) / 100 * 93) + ' руб.';
+      resPriceOnce.textContent =  Math.round(++resPriceOnce.textContent.replace(/\D+/g,"") / 100 * 93) + ' руб.';
+
+    } else if (resCountInput.value >= 40) {
+      resPriceAll.textContent = Math.round((+resPriceAll.textContent.replace(/\D+/g,"")) / 100 * 90) + ' руб.';
+      resPriceOnce.textContent =  Math.round(++resPriceOnce.textContent.replace(/\D+/g,"") / 100 * 90) + ' руб.';
+    }
+
+
   });
 
 });
