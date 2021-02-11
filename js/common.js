@@ -142,7 +142,12 @@ jQuery(document).ready(function ($) {
     alert('Ошибка! Попробуйте отправить еще раз!');
   });
 
+  setTimeout(function(){$('.overlay').fadeIn(300);},15000);
+  setTimeout(function(){$('.popup-auto').fadeIn(300);},15000);
+
+  $('.close-auto').on('click', function() {
+    $('.overlay').fadeOut(200);
+    $('.popup-auto').fadeOut(200);
+  });
   
-
-
 });
