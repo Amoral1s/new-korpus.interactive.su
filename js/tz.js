@@ -47,7 +47,7 @@ jQuery(document).ready(function ($) {
 
     const calcRalWrapTopp = document.querySelector('.calc-ral-top');
 
-    calcRalWrapTopp.addEventListener('click', (e) => {
+    calcRalWrapTopp.addEventListener('mousedown', (e) => {
       let target = e.target;
       ralTop.value = target.textContent;
       

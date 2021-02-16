@@ -298,7 +298,7 @@ jQuery(document).ready(function ($) {
 
     const calcRalWrapTopp = document.querySelector('.calc-ral-topp');
 
-    calcRalWrapTopp.addEventListener('click', (e) => {
+    calcRalWrapTopp.addEventListener('mousedown', (e) => {
       let target = e.target;
       ralTop.value = target.textContent;
       
@@ -318,7 +318,7 @@ jQuery(document).ready(function ($) {
 
     const calcRalWrapTopp = document.querySelector('.calc-ral-floor');
 
-    calcRalWrapTopp.addEventListener('click', (e) => {
+    calcRalWrapTopp.addEventListener('mousedown', (e) => {
       let target = e.target;
       ralFloor.value = target.textContent;
       
@@ -339,7 +339,7 @@ jQuery(document).ready(function ($) {
 
     const calcRalWrapBott = document.querySelector('.calc-ral-bott');
 
-    calcRalWrapBott.addEventListener('click', (e) => {
+    calcRalWrapBott.addEventListener('mousedown', (e) => {
       let target = e.target;
       ralBot.value = target.textContent;
       
