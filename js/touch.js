@@ -105,11 +105,10 @@ jQuery(document).ready(function ($) {
         elem.previousElementSibling.value++;
         elem.previousElementSibling.dispatchEvent(change);
 
-        if (elem.previousElementSibling.classList.contains('reg-g-do-input') && elem.previousElementSibling.value > 90) {
-          alert('Значение не может быть больше 90!');
+        if (elem.previousElementSibling.classList.contains('reg-g-do-input') && elem.previousElementSibling.value < 90) {
+          alert('Значение не может быть меньше 90!');
           elem.previousElementSibling.value = 90;
-        }
-        if (elem.previousElementSibling.classList.contains('reg-do-input') && elem.previousElementSibling.value > 90) {
+        } if (elem.previousElementSibling.classList.contains('reg-do-input') && elem.previousElementSibling.value > 500) {
           alert('Значение не может быть больше 500!');
           elem.previousElementSibling.value = 500;
         }
@@ -120,6 +119,11 @@ jQuery(document).ready(function ($) {
         let change = new Event ('change');
         elem.nextElementSibling.value--;
         elem.nextElementSibling.dispatchEvent(change);
+
+        if (elem.nextElementSibling.classList.contains('reg-do-input') && elem.nextElementSibling.value < 90) {
+          alert('Значение не может быть меньше 90!');
+          elem.nextElementSibling.value = 90;
+        }
       });
     });
   }
